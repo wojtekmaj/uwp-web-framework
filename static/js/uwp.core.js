@@ -88,7 +88,9 @@ UWP.getNavigation = function() {
 			
 			/* If that's a file, we'll create an img object with src pointed to it */
 			if(/\.(jpg|png|gif|svg)/.test(navIconSource.textContent)) {
-				// TODO
+				var navIconImage = document.createElement('img');
+				navIconImage.src = navIconSource.textContent;
+				navIcon.appendChild(navIconImage);
 			}
 			/* ...otherwise, it must be Segoe MDL2 symbol */
 			else {
