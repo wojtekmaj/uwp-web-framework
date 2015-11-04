@@ -1,0 +1,14 @@
+<page>
+    <title>Sample text page</title>
+    <body>
+        <![CDATA[
+            <h2>Documentation</h2>
+            <section>
+                <h3>Getting started</h3>
+                <h4>Configuration</h4>
+                <h4>Navigation</h4>
+                <h4>Pages</h4>
+            </section>
+        ]]>
+    </body>
+</page>
