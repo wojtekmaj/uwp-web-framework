@@ -13,6 +13,13 @@ function toArray(obj) { if(obj) return Array.prototype.slice.call(obj); }
 var UWP = {};
 
 
+/* Default config */
+UWP.config = {
+	pageTitle: 'UWP web framework',
+	headerType: 'pane'
+}
+
+
 /* Main init function */
 UWP.init = function(params) {
 	console.log('UWP.init()');
@@ -35,6 +42,7 @@ UWP.init = function(params) {
 		UWP.header.prependChild(UWP.pageTitle);
 	}
 	
+	UWP.getConfig();
 	UWP.getNavigation();
 	UWP.navigate();
 }
@@ -52,7 +60,15 @@ UWP.getConfig = function() {
 		if(UWP_config_request.readyState == 4) {
 			if(UWP_config_request.status == 200) {
 				if(UWP_config_request.responseXML) {
-					var headerType = UWP_config_request.responseXML.querySelector('mainMenu')
+					var config = UWP_config_request.responseXML.querySelector('config');
+					var pageTitleSource = config.querySelector('pageTitle');
+					var headerTypeSource = config.querySelector('headerType');
+					
+					if(pageTitleSource)
+						UWP.config.pageTitle = pageTitleSource.textContent;
+					
+					if(headerTypeSource)
+						UWP.config.headerType = headerTypeSource.textContent;
 				}
 				else {
 					console.error('Invalid response.');
@@ -158,7 +174,6 @@ UWP.addMenuButton = function() {
 		UWP.menuButton = document.createElement('button');
 		UWP.menuButton.innerHTML = '&#xE700;';
 		UWP.menuButton.setAttribute('aria-label', 'Menu');
-		UWP.menuButton.classList.add('mdl2');
 		
 		UWP.menuList = UWP.header.querySelector('header nav');
 		
@@ -183,11 +198,24 @@ UWP.navigate = function(target) {
 		
 	UWP.config.currentPage = target;
 		
+	/* Clears the page content */
 	UWP.main.classList.remove('error');
 	UWP.main.innerHTML = '';
+	
+	/* Displays error message */
+	function displayError(title) {
+		UWP.main.classList.add('error');
+		UWP.main.innerHTML = '<h3>' + title + '</h3><p>Ready for an adventure?</p><p><a href="#">Try again</a>'
+		UWP.main.querySelector('a').addEventListener('click', function(event) {
+			event.preventDefault();
+			
+			UWP.navigate(target);
+		});
+	}
 		
 	var URL = 'pages/' + target + '.xml';
 	
+	/* Requests page data */
 	var UWP_navigate_request = new XMLHttpRequest();
 	UWP_navigate_request.onreadystatechange = function() {
 		if(UWP_navigate_request.readyState == 4) {
@@ -214,22 +242,23 @@ UWP.navigate = function(target) {
 					});
 				}
 				else {
-					console.error('Invalid response.');
+					console.error('Something went wrong');
+					
+					displayError();
 				}
 			}
 			else {
 				console.error('Failed to retrieve the requested page.');
 				
-				UWP.main.classList.add('error');
-				UWP.main.innerHTML = '<h3>Check connection</h3><p>Looking good?</p><p><a href="#">Try again</a>'
-				UWP.main.querySelector('a').addEventListener('click', function(event) {
-					event.preventDefault();
-					
-					UWP.navigate(target);
-				});
+				displayError('Check connection');
 			}
 		}
 	}
 	UWP_navigate_request.open('GET', URL, true);
-	UWP_navigate_request.send(null);	
+	try {
+		UWP_navigate_request.send(null);
+	}
+	catch(err) {
+		displayError('Something went wrong');
+	}
 };
