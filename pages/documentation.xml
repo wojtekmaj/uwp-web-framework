@@ -1,10 +1,10 @@
 <page>
-    <title>Sample text page</title>
+    <title>Documentation</title>
     <body>
         <![CDATA[
             <h2>Documentation</h2>
             <section>
-                <h3>Getting started</h3>
+                <h3>Documentation</h3>
                 <h4>Configuration</h4>
                 <p>Configuration file is placed in config/config.xml. If you want to change the way the page looks or behaves by default, you need to edit that file.</p>
                 <p>Neither the file nor any of the variables in it listed below are required for the UWP web framework to work properly.</p>
