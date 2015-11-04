@@ -89,8 +89,11 @@ UWP.getConfig = function() {
 
 
 /* Gets document's navigation, puts it in place */
-UWP.getNavigation = function() {
+UWP.getNavigation = function(target) {
 	console.log('UWP.getNavigation()');
+	
+	if(typeof target === 'undefined')
+		target = 'default';
 	
 	function parseNavElement(el) {
 		var navLabel = el.querySelector('label').textContent;
@@ -130,7 +133,7 @@ UWP.getNavigation = function() {
 		return navElement;
 	}
 	
-	var URL = 'nav/nav.xml';
+	var URL = 'nav/' + target + '.xml';
 	
 	var UWP_navigation_request = new XMLHttpRequest();
 	UWP_navigation_request.onreadystatechange = function() {
