@@ -1,32 +1,38 @@
-<mainMenu>
-	<nav>
-		<el>
-			<label>Main page</label>
-			<icon>&#xE80F;</icon>
-			<target>default</target>
-		</el>
-		<el>
-			<label>Documentation</label>
-			<target>documentation</target>
-		</el>
-		<el>
-			<label>Sample text page</label>
-			<target>sample_text</target>
-		</el>
-		<el>
-			<label>Sample form page</label>
-			<target>sample_form</target>
-		</el>
-		<el>
-			<label>Sample list page</label>
-			<target>sample_list</target>
-		</el>
-	</nav>
-	<nav>
-		<el>
-			<label>Settings</label>
-			<icon>&#xE713;</icon>
-			<target>settings</target>
-		</el>
-	</nav>
-</mainMenu>
+<nav>
+	<mainMenu>
+		<list>
+			<el>
+				<label>Main page</label>
+				<icon>&#xE80F;</icon>
+				<target>default</target>
+			</el>
+			<el>
+				<label>Documentation</label>
+				<icon>&#xE7C3;</icon>
+				<target>documentation</target>
+			</el>
+			<el>
+				<label>Sample text page</label>
+				<icon>&#xE8E4;</icon>
+				<target>sample_text</target>
+			</el>
+			<el>
+				<label>Sample form page</label>
+				<icon>&#xE8AC;</icon>
+				<target>sample_form</target>
+			</el>
+			<el>
+				<label>Sample list page</label>
+				<icon>&#xE71D;</icon>
+				<target>sample_list</target>
+			</el>
+		</list>
+		<list>
+			<el>
+				<label>Settings</label>
+				<icon>&#xE713;</icon>
+				<target>settings</target>
+			</el>
+		</list>
+	</mainMenu>
+</nav>
