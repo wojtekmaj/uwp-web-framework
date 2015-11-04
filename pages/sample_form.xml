@@ -1,0 +1,13 @@
+<page>
+    <title>Sample form page</title>
+    <body>
+        <![CDATA[
+            <h2>Sample form page</h2>
+            <section>
+                <h3>Test form</h3>
+                <button>Button</button><br />
+                <button disabled>Disabled button</button>
+            </section>
+        ]]>
+    </body>
+</page>

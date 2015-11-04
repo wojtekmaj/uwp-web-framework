@@ -1,0 +1,27 @@
+<page>
+    <title>UWP web framework</title>
+    <body>
+        <![CDATA[
+            <h2>UWP web framework</h2>
+            <section>
+                <h3>Hello!</h3>
+                <p>Welcome to Universal Windows Platform web framework.</p>
+                <p>Create web-based Universal Windows Platform applications in a blink of an eye! Use basic HTML syntax, follow automatic hints in your developer console, and let UWP web framework do all the work for you!</p>
+                
+                <h4>System requirements</h4>
+                <ul>
+                    <li>Windows 10</li>
+                    <li>…that's all!</li>
+                </ul>
+                
+                <h4>Browser support</h4>
+                <ul>
+                    <li>Edge (all versions)</li>
+                    <li>Chrome (version 29 or later)</li>
+                    <li>Firefox (version 28 or later)</li>
+                    <li>Internet Explorer (version 11 or later)</li>
+                </ul>
+            </section>
+        ]]>
+    </body>
+</page>

@@ -1,0 +1,28 @@
+<mainMenu>
+	<nav>
+		<el>
+			<label>Main page</label>
+			<icon>&#xE80F;</icon>
+			<target>default</target>
+		</el>
+		<el>
+			<label>Sample text page</label>
+			<target>sample_text</target>
+		</el>
+		<el>
+			<label>Sample form page</label>
+			<target>sample_form</target>
+		</el>
+		<el>
+			<label>Sample list page</label>
+			<target>sample_list</target>
+		</el>
+	</nav>
+	<nav>
+		<el>
+			<label>Settings</label>
+			<icon>&#xE713;</icon>
+			<target>settings</target>
+		</el>
+	</nav>
+</mainMenu>

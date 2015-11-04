@@ -1,0 +1,342 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+    font-family: inherit;
+}
+
+body {
+    font-family: Segoe UI, Segoe MDL2 Assets;
+    font-size: 15px;
+    line-height: 1.5;
+    
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    
+    overflow: hidden;
+}
+
+h1 {
+    display: none;
+}
+h2 {
+    display: none;
+}
+h3, h4, h5 {
+    color: black;
+    font-weight: 300;
+}
+h3:not(:first-child), h4:not(:first-child), h5:not(:first-child) {
+    margin-top: 0.5em;
+}
+h3 {
+    font-size: 34px;
+}
+h4 {
+    font-size: 24px;
+}
+h5 {
+    font-size: 20px;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+/* Top level navigation */
+header {
+    width: 100%;
+    
+    position: relative;
+    z-index: 1;
+}
+    header nav {
+    }
+        header nav ul {   
+        }
+            header nav ul li {
+                display: block;
+            }
+                header nav ul li a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+
+header[data-style="tabs"] {
+    min-height: 60px;
+    background: rgb(230, 230, 230);
+    color: rgb(92, 92, 92);
+}
+    /* Hide all unsupported navs */
+    header[data-style="tabs"] nav {
+        display: none;
+    }
+    /* ...but show the supported one */
+    header[data-style="tabs"] nav:nth-of-type(1) {
+        width: 100%;
+        height: 100%;
+        font-size: 12px;
+        
+        display: flex;
+        justify-content: center;
+    }
+        header[data-style="tabs"] nav:nth-of-type(1) ul {
+            height: 100%;
+            
+            flex-shrink: 1;
+        
+            display: flex;
+        }
+            header[data-style="tabs"] nav:nth-of-type(1) ul li {
+                width: 84px;
+                height: 100%;
+            }
+            header[data-style="tabs"] nav:nth-of-type(1) ul li.active {
+                color: rgb(0, 120, 215);
+                border-bottom: 2px solid rgb(0, 120, 215);
+            }
+            header[data-style="tabs"] nav:nth-of-type(1) ul li:not(.active):hover {
+                background-color: rgb(205, 205, 205);
+            }
+                header[data-style="tabs"] nav:nth-of-type(1) ul li a {
+                    width: 100%;
+                    height: 100%;
+                
+                    display: block;
+                    padding: 10px;
+                    text-align: center;
+                }
+                    header[data-style="tabs"] nav:nth-of-type(1) ul li a span {
+                        width: 20px;
+                        height: 20px;
+                        
+                        display: block;
+                        margin: 0 auto;
+                        margin-bottom: 4px;
+                        
+                        font-size: 16px;
+                    }
+              
+header[data-style="pane"] {
+    height: 44px;
+    background: rgb(250, 250, 250);
+    color: rgb(50, 50, 50);
+    
+    display: flex;
+}      
+    header[data-style="pane"] > span {
+        height: 24px;
+        margin: 10px 0;
+        padding-left: 14px;
+        border-left: 1px solid rgb(200, 200, 200);
+        
+        flex-grow: 1;
+        
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 24px;
+        color: rgb(50, 50, 50);
+    }
+    header[data-style="pane"] button {
+        width: 44px;
+        height: 44px;
+        border: 0;
+        background-color: transparent;
+	    vertical-align: top;
+        position: relative;
+        z-index: 2;
+        font-size: 20px;
+    }
+    header[data-style="pane"] button:hover {
+        background-color: rgb(218, 218, 218);
+    }
+    header[data-style="pane"] nav:nth-of-type(1) {
+        width: 250px;
+        padding-top: 44px;
+        background: rgb(230, 230, 230);
+        transition: left 350ms cubic-bezier(0.1, 0.9, 0.2, 1);
+        
+        position: fixed;
+        top: 0;
+        left: -250px;
+        bottom: 0;
+        z-index: 1;
+        
+        display: flex;
+        flex-direction: column;
+        
+        font-size: 15px;
+    }
+    header[data-style="pane"] nav:nth-of-type(1).active {
+        left: 0;
+    }
+        header[data-style="pane"] nav:nth-of-type(1) ul {
+            width: 100%;
+        }
+        /* Fills the space to push the last menu to the very bottom */
+        header[data-style="pane"] nav:nth-of-type(1) ul:nth-last-of-type(2) {
+            flex-grow: 1;
+        }
+        header[data-style="pane"] nav:nth-of-type(1) ul:last-of-type {
+            flex-shrink: 1;
+        }
+        header[data-style="pane"] nav:nth-of-type(1) ul:not(:first-of-type) {
+            border-top: 1px solid rgb(200, 200, 200);
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+            header[data-style="pane"] nav:nth-of-type(1) ul li {
+                width: 100%;
+                height: 44px;
+                
+                line-height: 0; /* Edge fix */
+            }
+            header[data-style="pane"] nav:nth-of-type(1) ul li.active {
+                color: white;
+                background-color: rgb(0, 120, 215);
+            }
+            header[data-style="pane"] nav:nth-of-type(1) ul li:not(.active):hover {
+                background-color: rgb(205, 205, 205);
+            }
+                header[data-style="pane"] nav:nth-of-type(1) ul li a {
+                    width: 100%;
+                    height: 100%;
+                    padding: 10px;
+                    display: flex;
+                    line-height: 24px;
+                }
+                    header[data-style="pane"] nav:nth-of-type(1) ul li a span {
+                        width: 24px;
+                        height: 24px;
+                        
+                        margin: 2px 10px 2px 0;
+                        
+                        font-size: 16px;
+                        text-align: center;
+                    }
+    header[data-style="pane"] nav:nth-of-type(2) {
+        height: 24px;
+        margin: 10px;
+        
+        font-size: 15px;
+        line-height: 24px;
+        color: rgb(50, 50, 50);
+    }
+
+/* Commands */
+nav[data-type="commands"] {
+    width: 100%;
+    height: 48px;
+    background: rgb(230, 230, 230);
+    color: rgb(90, 90, 90);
+}
+    nav[data-type="commands"] ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+        nav[data-type="commands"] ul li {
+            display: inline-block;
+            min-width: 68px;
+            height: 100%;
+            padding: 14px 24px;
+            text-align: center;
+        }
+        nav[data-type="commands"] ul li:hover {
+            background-color: rgb(205, 205, 205);
+        }
+            nav[data-type="commands"] ul li span {
+                display: block;
+                margin: 0 auto;
+            }
+            nav[data-type="commands"] ul li span:first-child {
+                width: 20px;
+                height: 20px;
+                margin-bottom: 4px;
+                background-color: rgb(90, 90, 90);
+            }
+            nav[data-type="commands"] ul li span:last-child {
+                display: none;
+            }
+
+/* Content */
+main {
+    background: rgb(255, 255, 255);
+    color: rgb(102, 102, 102);
+    
+    flex-grow: 1;
+    overflow-y: auto;
+}
+    main a {
+        color: rgb(0, 120, 215);
+    }
+    
+    main button {
+        margin: 0.18em 0;
+        padding: 0.18em 1.8em;
+        border: 2px solid rgb(205, 205, 205);
+        background-color: rgb(205, 205, 205);
+        font-size: 16px;
+    }
+    main button[disabled] {
+        color: rgb(165, 165, 165);
+    }
+    main button:not([disabled]):hover {
+        border-color: rgb(140, 140, 140);
+    }
+    main button:not([disabled]):active {
+        border-color: rgb(150, 150, 150);
+        background-color: rgb(150, 150, 150);
+    }
+    
+    main section {
+        padding: 12px;
+    }
+        main section ul {
+            margin-left: 1em;
+        }
+    
+    main section[data-type="list"] {
+        padding: 0;
+    }
+        main section[data-type="list"] h3 {
+            display: none;
+        }
+        main section[data-type="list"] ul {
+            margin: 0;
+        }
+            main section[data-type="list"] ul li {
+                padding: 12px;
+                display: flex;
+            }
+            main section[data-type="list"] ul li:hover {
+                background-color: rgb(230, 230, 230);
+            }
+                main section[data-type="list"] ul li div[data-type="contact-photo"] {
+                    width: 48px;
+                    height: 48px;
+                    margin-right: 12px;
+                }
+                    main section[data-type="list"] ul li div[data-type="contact-photo"] img {
+                        border-radius: 100%;
+                    }
+                main section[data-type="list"] ul li h4 {
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+                main section[data-type="list"] ul li p {
+                    font-size: 13px;
+                }
+                
+main.error {
+    text-align: center;
+    padding-top: calc(50% - 6.5em);
+}

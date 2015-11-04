@@ -1,0 +1,19 @@
+<page>
+    <title>Sample text page</title>
+    <body>
+        <![CDATA[
+            <h2>Sample text page</h2>
+            <section>
+                <h3>H3 Subheader</h3>
+                <h4>H4 Title</h4>
+                <h5>H5 Subtitle</h5>
+                <p>This is a sample text, with <a href="#">a link</a>.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et malesuada nisl, at tristique nibh. Morbi pharetra ligula imperdiet diam interdum, at ullamcorper arcu semper. Donec quis faucibus lacus. Maecenas sed accumsan neque. Quisque interdum leo justo. Integer aliquam massa turpis, nec accumsan dui ultrices eget. Vestibulum augue neque, ornare quis quam id, aliquet porta nisi. Suspendisse vel justo vel nisi placerat posuere. Proin euismod efficitur orci ac commodo. Sed ultricies convallis lectus, a consequat enim tristique eu. Donec condimentum dui et risus malesuada, at pellentesque purus viverra. Nunc in ante rhoncus, tempor quam id, suscipit urna. Sed pellentesque ornare lacus, ac laoreet massa pellentesque a. Phasellus vestibulum viverra nisl ut vestibulum. Praesent fringilla dui eget ante pretium mattis. Suspendisse commodo quis dolor a finibus.</p>
+                <p>Cras scelerisque justo nec nunc facilisis, sed euismod massa rhoncus. Sed lobortis sodales elit, eu tincidunt magna congue sit amet. Sed cursus venenatis molestie. Suspendisse ultrices nisi iaculis venenatis aliquet. Quisque fermentum ante a fermentum vehicula. Quisque maximus suscipit dictum. Nullam malesuada tortor scelerisque velit mollis, at congue erat finibus. Proin sed libero id risus semper sollicitudin. Nulla facilisi.</p>
+                <p>Mauris non libero a massa accumsan sodales. Etiam congue varius elit. Donec quis suscipit felis. Nunc interdum pharetra sapien ultrices fermentum. Praesent vitae aliquet sem. Praesent porttitor erat vel lorem tincidunt ultrices. Nulla porta felis ut diam euismod pretium. Maecenas efficitur felis sit amet nisl rutrum tempor. Nam sit amet nulla nunc. Sed gravida porta vestibulum. Nulla tristique euismod mi, ac cursus mi. Quisque non efficitur nulla. Nam pretium, nisl fringilla eleifend rhoncus, est mi mollis sem, sit amet consectetur purus massa vitae massa. Nulla nec sagittis eros, vel efficitur urna. Donec in leo sem.</p>
+                <p>Etiam blandit dui leo, nec mollis sapien pellentesque sed. Sed sodales nisl commodo, scelerisque sem at, dignissim velit. Suspendisse eleifend nunc et ipsum laoreet, placerat sagittis enim molestie. Quisque eget magna ex. Curabitur consectetur massa ut orci eleifend dictum. Suspendisse mauris sapien, mattis eget dictum vitae, ornare sit amet dui. Donec placerat velit efficitur neque mattis volutpat. Nam nisl leo, tristique in laoreet a, maximus et lorem. Aliquam eleifend venenatis quam quis feugiat. Phasellus commodo vitae est sit amet consequat.</p>
+                <p>Phasellus non mi enim. Duis sed mi porttitor, efficitur magna at, aliquam augue. Pellentesque interdum lacus in velit venenatis pretium. Sed scelerisque maximus molestie. Sed id pretium sem. Proin vel tincidunt turpis. Maecenas venenatis congue pulvinar. Maecenas interdum velit eget lorem convallis aliquam. Nulla non volutpat est, sollicitudin vestibulum erat. Fusce pretium pharetra odio. Vivamus vel lectus nunc. Quisque mattis, magna ut egestas sodales, neque mauris fermentum nulla, non volutpat enim odio quis lorem. Sed dapibus eu lectus ut imperdiet. Donec sed fringilla diam, vitae sodales lacus.</p>
+            </section>
+        ]]>
+    </body>
+</page>

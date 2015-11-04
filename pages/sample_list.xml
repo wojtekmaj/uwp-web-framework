@@ -1,0 +1,40 @@
+<page>
+    <title>Sample list page</title>
+    <body>
+        <![CDATA[
+            <h2>Sample list page</h2>
+            <section data-type="list">
+                <h3>Test list</h3>
+                <ul>
+                    <li>
+                        <div data-type="contact-photo">
+                            <img src="static/img/avatar1.jpg" />
+                        </div>
+                        <div>
+                            <h4>John Smith</h4>
+                            <p>pon. 8:52, Skype, Outgoing</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div data-type="contact-photo">
+                            <img src="static/img/avatar2.jpg" />
+                        </div>
+                        <div>
+                            <h4>John Smith</h4>
+                            <p>pon. 8:52, Skype, Outgoing</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div data-type="contact-photo">
+                            <img src="static/img/avatar3.jpg" />
+                        </div>
+                        <div>
+                            <h4>John Smith</h4>
+                            <p>pon. 8:52, Skype, Outgoing</p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        ]]>
+    </body>
+</page>
