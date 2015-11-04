@@ -35,6 +35,11 @@
                 <h4>Pages</h4>
                 <p>Pages are created by creating an XML file in pages folder. If you want to create a page with page ID "potato", you need to create pages/potato.xml file.</p>
                 <p>The ID specified can be used later by linking to it in navigation or by creating a link in any other page.</p>
+                <p>Available page attributes:</p>
+                <ul>
+                    <li>title - required - page title.</li>
+                    <li>body - required - page body.</li>
+                </ul>
             </section>
         ]]>
     </body>
