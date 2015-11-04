@@ -51,7 +51,6 @@ UWP.init = function(params) {
 }
 
 
-
 /* Gets document's navigation, puts it in place */
 UWP.getConfig = function() {
 	console.log('UWP.getConfig()');
@@ -85,7 +84,6 @@ UWP.getConfig = function() {
 	UWP_config_request.open('GET', URL, false);
 	UWP_config_request.send(null);
 };
-
 
 
 /* Gets document's navigation, puts it in place */
@@ -173,6 +171,7 @@ UWP.getNavigation = function(target) {
 	UWP_navigation_request.send(null);
 };
 
+
 /* Puts a menu button in title bar */
 UWP.addMenuButton = function() {
 	console.log('UWP.addMenuButton()');
@@ -195,6 +194,7 @@ UWP.addMenuButton = function() {
 		UWP.header.prependChild(UWP.menuButton);
 	}
 };
+
 
 /* Puts content in place */
 UWP.navigate = function(target) {
