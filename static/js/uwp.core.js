@@ -24,16 +24,20 @@ UWP.config = {
 UWP.init = function(params) {
 	console.log('UWP.init()');
 	
-	/* Define most important elements */
-	UWP.header = document.querySelector('header');
-	UWP.header.type = UWP.config.headerType;
-	UWP.header.setAttribute('data-style', UWP.header.type);
-	
+	/* Define main elements */
+	UWP.header = document.querySelector('header');	
 	UWP.main = document.querySelector('main');
-
+	
 	/* A little cleanup */
 	UWP.header.innerHTML = '';
 	UWP.main.innerHTML = '';
+	
+	/* Gets user-set config */
+	UWP.getConfig();
+	
+	/* Define additional variables */
+	UWP.header.type = UWP.config.headerType;
+	UWP.header.setAttribute('data-style', UWP.header.type);
 		
 	/* Prepares space for document's title, puts it in place */
 	if(UWP.header.type === 'pane') {
@@ -42,7 +46,6 @@ UWP.init = function(params) {
 		UWP.header.prependChild(UWP.pageTitle);
 	}
 	
-	UWP.getConfig();
 	UWP.getNavigation();
 	UWP.navigate();
 }
@@ -79,7 +82,7 @@ UWP.getConfig = function() {
 			}
 		}
 	}
-	UWP_config_request.open('GET', URL, true);
+	UWP_config_request.open('GET', URL, false);
 	UWP_config_request.send(null);
 };
 
@@ -232,7 +235,9 @@ UWP.navigate = function(target) {
 					UWP.main.innerHTML = pageBody;
 					
 					/* Puts the new page title in place */
-					UWP.pageTitle.innerHTML = pageTitle;
+					if(UWP.header.type === 'pane') {
+						UWP.pageTitle.innerHTML = pageTitle;
+					}
 					
 					/* Highlights current page */
 					toArray(document.querySelectorAll('nav a')).forEach(function(link) {

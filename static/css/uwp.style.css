@@ -69,7 +69,6 @@ header {
                 }
 
 header[data-style="tabs"] {
-    min-height: 60px;
     background: rgb(230, 230, 230);
     color: rgb(92, 92, 92);
 }
@@ -96,10 +95,11 @@ header[data-style="tabs"] {
             header[data-style="tabs"] nav:nth-of-type(1) ul li {
                 width: 84px;
                 height: 100%;
+                border-bottom: 2px solid transparent;
             }
             header[data-style="tabs"] nav:nth-of-type(1) ul li.active {
                 color: rgb(0, 120, 215);
-                border-bottom: 2px solid rgb(0, 120, 215);
+                border-bottom-color: rgb(0, 120, 215);
             }
             header[data-style="tabs"] nav:nth-of-type(1) ul li:not(.active):hover {
                 background-color: rgb(205, 205, 205);
