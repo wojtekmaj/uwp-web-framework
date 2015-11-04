@@ -310,6 +310,10 @@ main {
         main section[data-type="list"] h3 {
             display: none;
         }
+        main section p + p,
+        main section ul + p {
+            margin-top: 0.5em;
+        }
         main section[data-type="list"] ul {
             margin: 0;
         }

@@ -139,16 +139,17 @@ UWP.getNavigation = function() {
 					var nav = document.createElement('nav');
 					
 					/* Adds all the navigations to the DOM tree */
-					toArray(navsSource.querySelectorAll('nav')).forEach(function(navSource) {
+					toArray(navsSource.querySelectorAll('list')).forEach(function(navSource) {
 						var navMain = document.createElement('ul');
 						nav.appendChild(navMain);
+						
 						toArray(navSource.querySelectorAll('el')).forEach(function(el) {
 							navMain.appendChild(parseNavElement(el));
 						});
 					});
 					
 					/* If navigation was constructed, adds it to the DOM tree and displays menu button */
-					if(toArray(navsSource.querySelectorAll('nav')).length) {
+					if(toArray(navsSource.querySelectorAll('list')).length) {
 						UWP.header.appendChild(nav);
 						UWP.addMenuButton();
 					}

@@ -6,8 +6,35 @@
             <section>
                 <h3>Getting started</h3>
                 <h4>Configuration</h4>
+                <p>Configuration file is placed in config/config.xml. If you want to change the way the page looks or behaves by default, you need to edit that file.</p>
+                <p>Neither the file nor any of the variables in it listed below are required for the UWP web framework to work properly.</p>
+                <p>Available config attributes:</p>
+                <ul>
+                    <li>pageTitle: <em>(string)</em> - specifies page title.</li>
+                    <li>headerType: <em>tabs, <u>pane</u></em> - specifies header type.</li>
+                </ul>
                 <h4>Navigation</h4>
+                <p>Navigation file is placed in nav/nav.xml. If you want to amend main menu items, you need to edit that file.</p>
+                <p>There are several navigation areas that you can amend using that file.</p>
+                <p>Available navigation areas:</p>
+                <ul>
+                    <li>mainMenu - main menu.</li>
+                </ul>
+                <p>Each navigation area might consist of several navigation lists. Each navigation area will treat them a little differently to match UWP design guidelines.</p>
+                <p>Default navigation areas behavior:</p>
+                <ul>
+                    <li>mainMenu - all the lists but the last one will be separated from the others with a line. The last list is fixed to the bottom of the navigation pane.</li>
+                </ul>
+                <p>Each navigation list might consist of several elements.</p>
+                <p>Available navigation list elements attributes:</p>
+                <ul>
+                    <li>label: <em>(string)</em> - required - a text label that will be visible on the list.</li>
+                    <li>icon: <em>(string or HTML entity)</em> - an icon that will be visible on the list.</li>
+                    <li>target: <em>(string)</em> - required - an ID of the page that should be opened by the navigation element.</li>
+                </ul>
                 <h4>Pages</h4>
+                <p>Pages are created by creating an XML file in pages folder. If you want to create a page with page ID "potato", you need to create pages/potato.xml file.</p>
+                <p>The ID specified can be used later by linking to it in navigation or by creating a link in any other page.</p>
             </section>
         ]]>
     </body>
