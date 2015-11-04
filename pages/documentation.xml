@@ -23,7 +23,7 @@
                 <p>Each navigation area might consist of several navigation lists. Each navigation area will treat them a little differently to match UWP design guidelines.</p>
                 <p>Default navigation areas behavior:</p>
                 <ul>
-                    <li>mainMenu - all the lists but the last one will be separated from the others with a line. The last list is fixed to the bottom of the navigation pane.</li>
+                    <li>mainMenu - If you use headerType pane: All the lists but the last one will be separated from the others with a line. The last list is fixed to the bottom of the navigation pane. If you use headerType tabs: All the list but the first one will be hidden.</li>
                 </ul>
                 <p>Each navigation list might consist of several elements.</p>
                 <p>Available navigation list elements attributes:</p>
