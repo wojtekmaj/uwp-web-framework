@@ -8,7 +8,7 @@
                 <ul>
                     <li>
                         <div data-type="contact-photo">
-                            <img src="static/img/avatar1.jpg" />
+                            <img src="static/img/default_avatar.png" />
                         </div>
                         <div>
                             <h4>John Smith</h4>
@@ -17,7 +17,7 @@
                     </li>
                     <li>
                         <div data-type="contact-photo">
-                            <img src="static/img/avatar2.jpg" />
+                            <img src="static/img/default_avatar.png" />
                         </div>
                         <div>
                             <h4>John Smith</h4>
@@ -26,7 +26,7 @@
                     </li>
                     <li>
                         <div data-type="contact-photo">
-                            <img src="static/img/avatar3.jpg" />
+                            <img src="static/img/default_avatar.png" />
                         </div>
                         <div>
                             <h4>John Smith</h4>
@@ -35,7 +35,7 @@
                     </li>
                     <li>
                         <div data-type="contact-photo">
-                            <img src="static/img/avatar1.jpg" />
+                            <img src="static/img/default_avatar.png" />
                         </div>
                         <div>
                             <h4>John Smith</h4>
@@ -44,7 +44,7 @@
                     </li>
                     <li>
                         <div data-type="contact-photo">
-                            <img src="static/img/avatar2.jpg" />
+                            <img src="static/img/default_avatar.png" />
                         </div>
                         <div>
                             <h4>John Smith</h4>
@@ -53,7 +53,7 @@
                     </li>
                     <li>
                         <div data-type="contact-photo">
-                            <img src="static/img/avatar3.jpg" />
+                            <img src="static/img/default_avatar.png" />
                         </div>
                         <div>
                             <h4>John Smith</h4>
@@ -62,7 +62,7 @@
                     </li>
                     <li>
                         <div data-type="contact-photo">
-                            <img src="static/img/avatar1.jpg" />
+                            <img src="static/img/default_avatar.png" />
                         </div>
                         <div>
                             <h4>John Smith</h4>
@@ -71,7 +71,7 @@
                     </li>
                     <li>
                         <div data-type="contact-photo">
-                            <img src="static/img/avatar2.jpg" />
+                            <img src="static/img/default_avatar.png" />
                         </div>
                         <div>
                             <h4>John Smith</h4>
@@ -80,7 +80,7 @@
                     </li>
                     <li>
                         <div data-type="contact-photo">
-                            <img src="static/img/avatar3.jpg" />
+                            <img src="static/img/default_avatar.png" />
                         </div>
                         <div>
                             <h4>John Smith</h4>
@@ -89,7 +89,7 @@
                     </li>
                     <li>
                         <div data-type="contact-photo">
-                            <img src="static/img/avatar1.jpg" />
+                            <img src="static/img/default_avatar.png" />
                         </div>
                         <div>
                             <h4>John Smith</h4>
@@ -98,7 +98,7 @@
                     </li>
                     <li>
                         <div data-type="contact-photo">
-                            <img src="static/img/avatar2.jpg" />
+                            <img src="static/img/default_avatar.png" />
                         </div>
                         <div>
                             <h4>John Smith</h4>
@@ -107,7 +107,7 @@
                     </li>
                     <li>
                         <div data-type="contact-photo">
-                            <img src="static/img/avatar3.jpg" />
+                            <img src="static/img/default_avatar.png" />
                         </div>
                         <div>
                             <h4>John Smith</h4>
