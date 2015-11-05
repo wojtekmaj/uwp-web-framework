@@ -11,11 +11,12 @@
                     <li>…that's all!</li>
                 </ul>
                 <h4>Browser support</h4>
+                <p>Universal Windows Platform web framework was created specifically to help developers create web-based UWP apps. Therefore it's best supported by Microsoft Edgem, although it should look almost perfect in the following browsers:</p>
                 <ul>
-                    <li>Edge (all versions)</li>
-                    <li>Chrome (version 29 or later)</li>
-                    <li>Firefox (version 28 or later)</li>
-                    <li>Internet Explorer (version 11 or later)</li>
+                    <li><strong>Edge</strong> (all versions)</li>
+                    <li><strong>Chrome</strong> (version 29 or later)</li>
+                    <li><strong>Firefox</strong> (version 28 or later)</li>
+                    <li><strong>Internet Explorer</strong> (version 11 or later)</li>
                 </ul>
                 <h4>Configuration</h4>
                 <p>Configuration file is placed in config/config.xml. If you want to change the way the page looks or behaves by default, you need to edit that file.</p>
@@ -24,7 +25,14 @@
                 <ul>
                     <li><strong>pageTitle</strong> <em>(string)</em> - specifies page title.</li>
                     <li><strong>layoutType</strong> <em>([tabs, pane-overlay, pane-semidocked, pane-docked], default: pane-overlay)</em> - specifies header type. See "Available layout types" for more information.</li>
-                <h5>Available layout typesd</h5>
+                </ul>
+                <h5>Available layout types</h5>
+                <ul>
+                    <li><strong>tabs</strong> - displays as a tab bar at the top of the page, like in Phone app.</li>
+                    <li><strong>pane-overlay</strong> - displays as a menu activated using a button in top-left corner. Typical hamburger menu.</li>
+                    <li><strong>pane-semidocked</strong> - displays as a menu activated using a button in top-left corner. While deactivated, the icons of all menu options are still displayed and active.</li>
+                    <li><strong>pane-docked</strong> - displays as a menu that's always visible on the page.</li>
+                </ul>
                 <h4>Navigation</h4>
                 <p>Navigations are created by creating an XML files in nav folder. default.xml is used by default. If you want to amend main menu items, you need to edit that file.</p>
                 <p>There are several navigation areas that you can amend using that file.</p>
