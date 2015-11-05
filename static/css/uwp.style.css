@@ -20,11 +20,11 @@ body {
     
     overflow: hidden;
 }
-[data-layoutType="tabs"] body,
-[data-layoutType="pane-overlay"] body {
+body[data-layoutType="tabs"],
+body[data-layoutType="overlay"] {
     flex-direction: column;
 }
-[data-layoutType="docked-minimized"] body {
+body[data-layoutType="docked-minimized"] {
     flex-direction: row;
 }
 
@@ -75,17 +75,17 @@ header {
                     color: inherit;
                 }
 
-header[data-style="tabs"] {
+[data-layoutType="tabs"] header {
     width: 100%;
     background: rgb(230, 230, 230);
     color: rgb(92, 92, 92);
 }
     /* Hide all unsupported navs */
-    header[data-style="tabs"] nav {
+    [data-layoutType="tabs"] header nav {
         display: none;
     }
     /* ...but show the supported one */
-    header[data-style="tabs"] nav:nth-of-type(1) {
+    [data-layoutType="tabs"] header nav:nth-of-type(1) {
         width: 100%;
         height: 100%;
         font-size: 12px;
@@ -93,26 +93,26 @@ header[data-style="tabs"] {
         display: flex;
         justify-content: center;
     }
-        header[data-style="tabs"] nav:nth-of-type(1) ul {
+        [data-layoutType="tabs"] header nav:nth-of-type(1) ul {
             height: 100%;
             
             flex-shrink: 1;
         
             display: flex;
         }
-            header[data-style="tabs"] nav:nth-of-type(1) ul li {
+            [data-layoutType="tabs"] header nav:nth-of-type(1) ul li {
                 width: 84px;
                 height: 100%;
                 border-bottom: 2px solid transparent;
             }
-            header[data-style="tabs"] nav:nth-of-type(1) ul li.active {
+            [data-layoutType="tabs"] header nav:nth-of-type(1) ul li.active {
                 color: rgb(0, 120, 215);
                 border-bottom-color: rgb(0, 120, 215);
             }
-            header[data-style="tabs"] nav:nth-of-type(1) ul li:not(.active):hover {
+            [data-layoutType="tabs"] header nav:nth-of-type(1) ul li:not(.active):hover {
                 background-color: rgb(205, 205, 205);
             }
-                header[data-style="tabs"] nav:nth-of-type(1) ul li a {
+                [data-layoutType="tabs"] header nav:nth-of-type(1) ul li a {
                     width: 100%;
                     height: 100%;
                 
@@ -120,7 +120,7 @@ header[data-style="tabs"] {
                     padding: 10px;
                     text-align: center;
                 }
-                    header[data-style="tabs"] nav:nth-of-type(1) ul li a span {
+                    [data-layoutType="tabs"] header nav:nth-of-type(1) ul li a span {
                         width: 20px;
                         height: 20px;
                         
@@ -131,7 +131,7 @@ header[data-style="tabs"] {
                         font-size: 16px;
                     }
               
-[data-layoutType="pane-overlay"] header {
+[data-layoutType="overlay"] header {
     width: 100%;
     height: 44px;
     background: rgb(250, 250, 250);
@@ -139,7 +139,7 @@ header[data-style="tabs"] {
     
     display: flex;
 }      
-    [data-layoutType="pane-overlay"] header > span {
+    [data-layoutType="overlay"] header > span {
         height: 24px;
         margin: 10px 0;
         padding-left: 14px;
@@ -153,7 +153,7 @@ header[data-style="tabs"] {
         line-height: 24px;
         color: rgb(50, 50, 50);
     }
-    [data-layoutType="pane-overlay"] header button {
+    [data-layoutType="overlay"] header button {
         width: 44px;
         height: 44px;
         border: 0;
@@ -163,10 +163,10 @@ header[data-style="tabs"] {
         z-index: 2;
         font-size: 20px;
     }
-    [data-layoutType="pane-overlay"] header button:hover {
+    [data-layoutType="overlay"] header button:hover {
         background-color: rgb(218, 218, 218);
     }
-    [data-layoutType="pane-overlay"] header nav:nth-of-type(1) {
+    [data-layoutType="overlay"] header nav:nth-of-type(1) {
         width: 250px;
         padding-top: 44px;
         background: rgb(230, 230, 230);
@@ -183,45 +183,45 @@ header[data-style="tabs"] {
         
         font-size: 15px;
     }
-    [data-layoutType="pane-overlay"] header nav:nth-of-type(1).active {
+    [data-layoutType="overlay"] header nav:nth-of-type(1).active {
         left: 0;
     }
-        [data-layoutType="pane-overlay"] header nav:nth-of-type(1) ul {
+        [data-layoutType="overlay"] header nav:nth-of-type(1) ul {
             width: 100%;
         }
         /* Fills the space to push the last menu to the very bottom */
-        [data-layoutType="pane-overlay"] header nav:nth-of-type(1) ul:nth-last-of-type(2) {
+        [data-layoutType="overlay"] header nav:nth-of-type(1) ul:nth-last-of-type(2) {
             flex-grow: 1;
         }
-        [data-layoutType="pane-overlay"] header nav:nth-of-type(1) ul:last-of-type {
+        [data-layoutType="overlay"] header nav:nth-of-type(1) ul:last-of-type {
             flex-shrink: 1;
         }
-        [data-layoutType="pane-overlay"] header nav:nth-of-type(1) ul:not(:first-of-type) {
+        [data-layoutType="overlay"] header nav:nth-of-type(1) ul:not(:first-of-type) {
             border-top: 1px solid rgb(200, 200, 200);
             margin-top: 10px;
             padding-top: 10px;
         }
-            [data-layoutType="pane-overlay"] header nav:nth-of-type(1) ul li {
+            [data-layoutType="overlay"] header nav:nth-of-type(1) ul li {
                 width: 100%;
                 height: 44px;
                 
                 line-height: 0; /* Edge fix */
             }
-            [data-layoutType="pane-overlay"] header nav:nth-of-type(1) ul li.active {
+            [data-layoutType="overlay"] header nav:nth-of-type(1) ul li.active {
                 color: white;
                 background-color: rgb(0, 120, 215);
             }
-            [data-layoutType="pane-overlay"] header nav:nth-of-type(1) ul li:not(.active):hover {
+            [data-layoutType="overlay"] header nav:nth-of-type(1) ul li:not(.active):hover {
                 background-color: rgb(205, 205, 205);
             }
-                [data-layoutType="pane-overlay"] header nav:nth-of-type(1) ul li a {
+                [data-layoutType="overlay"] header nav:nth-of-type(1) ul li a {
                     width: 100%;
                     height: 100%;
                     padding: 10px;
                     display: flex;
                     line-height: 24px;
                 }
-                    [data-layoutType="pane-overlay"] header nav:nth-of-type(1) ul li a span {
+                    [data-layoutType="overlay"] header nav:nth-of-type(1) ul li a span {
                         width: 24px;
                         height: 24px;
                         
@@ -230,7 +230,7 @@ header[data-style="tabs"] {
                         font-size: 16px;
                         text-align: center;
                     }
-    [data-layoutType="pane-overlay"] header nav:nth-of-type(2) {
+    [data-layoutType="overlay"] header nav:nth-of-type(2) {
         height: 24px;
         margin: 10px;
         
@@ -346,12 +346,6 @@ header[data-style="tabs"] {
     [data-layoutType="docked"] header nav:nth-of-type(1) {
         width: 250px;
         background: rgb(230, 230, 230);
-        
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        z-index: 1;
         
         display: flex;
         flex-direction: column;
