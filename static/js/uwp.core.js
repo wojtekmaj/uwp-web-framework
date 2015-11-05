@@ -39,6 +39,16 @@ UWP.init = function(params) {
 	/* Define additional variables */
 	UWP.header.type = UWP.config.layoutType;
 	UWP.body.setAttribute('data-layoutType', UWP.header.type);
+	
+	/* Handles clicking internal links */
+	UWP.body.addEventListener('click', function(event) {
+		if(event.target.getAttribute('data-target') !== null) {
+			UWP.navigate(event.target.getAttribute('data-target'));
+		}
+	});
+	
+	UWP.getNavigation();
+	UWP.navigate();
 		
 	/* Prepares space for document's title, puts it in place */
 	if(UWP.header.type === 'pane-overlay') {
@@ -46,9 +56,6 @@ UWP.init = function(params) {
 		
 		UWP.header.prependChild(UWP.pageTitle);
 	}
-	
-	UWP.getNavigation();
-	UWP.navigate();
 }
 
 

@@ -7,6 +7,7 @@
                 <h3>Hello!</h3>
                 <p>Welcome to Universal Windows Platform web framework.</p>
                 <p>Create web-based Universal Windows Platform applications in a blink of an eye! Use basic HTML syntax, and let UWP web framework do all the work for you!</p>
+                <p>Check out the <a href="#" data-target="documentation" title="Documentation">documentation</a> to get started.</p>
             </section>
         ]]>
     </body>
