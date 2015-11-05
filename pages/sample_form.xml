@@ -9,6 +9,7 @@
                 <p>E-mail input: <input type="email"></input></p>
                 <p>Password input: <input type="password"></input></p>
                 <p>Number input: <input type="number"></input></p>
+                <p>Dropdown: <select><option>Oranges</option><option>Apples</option><option>Blueberries</option></select></p>
                 <p><input type="checkbox" id="sample_checkbox" data-type="checkbox"></input> <label for="sample_checkbox">Sample checkbox</label></p>
                 <p><button>Button</button></p>
                 <p><button disabled>Disabled button</button></p>

@@ -56,26 +56,31 @@ img {
 input[type="text"],
 input[type="email"],
 input[type="password"],
-input[type="number"]
+input[type="number"],
+select
 {
     display: block;
     width: 384px;
     height: 32px;
     max-width: 100%;
     min-width: 80px;
+    margin: 4px 0;
     padding: 0 11px;
-    border: 2px solid rgb(50, 50, 50);
+    font: inherit;
+    border: 2px solid rgb(150, 150, 150);
 }
 input[type="text"]:hover,
 input[type="email"]:hover,
 input[type="password"]:hover,
-input[type="number"]:hover {
-    border-color: rgb(0, 0, 0);
+input[type="number"]:hover,
+select:hover {
+    border-color: rgb(50, 50, 50);
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
-input[type="number"]:focus {
+input[type="number"]:focus,
+select:focus {
     border-color: rgb(0, 120, 215);
 }
 
@@ -83,11 +88,14 @@ input[type="checkbox"] {
     display: none;
 }
 input[type="checkbox"] + label:before {
-    content: '';
+    content: '';
     display: inline-block;
     vertical-align: -2px;
     width: 14px;
     height: 14px;
+    color: white;
+    font-size: 14px;
+    line-height: 18px;
     border: 2px solid rgb(50, 50, 50);
     margin-right: 8px;
 }
@@ -100,6 +108,16 @@ input[type="checkbox"]:checked + label:before {
 }
 input[type="checkbox"]:checked + label:hover:before {
     border-color: rgb(0, 0, 0);
+}
+
+option {
+    height: 32px;
+    padding: 4px 11px;
+    font: inherit;
+    background-color: rgb(240, 240, 240);
+}
+option:hover {
+    background-color: rgb(220, 220, 220);
 }
 
 
