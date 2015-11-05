@@ -225,6 +225,10 @@ UWP.navigate = function(target, addHistory) {
 		target = 'default';
 		
 	UWP.config.currentPage = target;
+					
+	/* Pushes history state */
+	if(addHistory !== false)
+		history.pushState('', '', window.location.href.split('#')[0] + '#page=' + target);
 		
 	/* Clears the page content */
 	UWP.main.classList.remove('error');
@@ -254,10 +258,6 @@ UWP.navigate = function(target, addHistory) {
 					var pageBody = toArray(page.querySelector('body').childNodes).filter(function(childNode) {
 						return childNode.nodeType === 4;
 					})[0].data;
-					
-					/* Pushes history state */
-					if(addHistory !== false)
-						history.pushState({}, pageTitle, window.location.href.split('#')[0] + '#page=' + target);
 					
 					/* Puts the new content in place */
 					UWP.main.innerHTML = pageBody;
