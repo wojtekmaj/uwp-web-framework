@@ -33,6 +33,7 @@
                     <li><strong>docked-minimized</strong> - displays as a menu activated using a button in top-left corner. While deactivated, the icons of all menu options are still displayed and active. Similar to what can be found in Groove Music app.</li>
                     <li><strong>docked</strong> - displays as a menu that's always visible on the page. Similar to what can be found in Groove Music app.</li>
                 </ul>
+                <p><a href="https://msdn.microsoft.com/en-us/library/windows/apps/dn997766.aspx" target="_blank">More on navigation in UWP apps</a></p>
                 <h4>Navigation</h4>
                 <p>Navigations are created by creating an XML files in nav folder. default.xml is used by default. If you want to amend main menu items, you need to edit that file.</p>
                 <p>There are several navigation areas that you can amend using that file.</p>

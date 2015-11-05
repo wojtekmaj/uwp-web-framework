@@ -25,6 +25,7 @@ UWP.init = function(params) {
 	console.log('UWP.init()');
 	
 	/* Define main elements */
+	UWP.head = document.head;
 	UWP.body = document.body;
 	UWP.header = document.querySelector('header');	
 	UWP.main = document.querySelector('main');
@@ -43,12 +44,20 @@ UWP.init = function(params) {
 	/* Handles clicking internal links */
 	UWP.body.addEventListener('click', function(event) {
 		if(event.target.getAttribute('data-target') !== null) {
+			event.preventDefault();
+			
 			UWP.navigate(event.target.getAttribute('data-target'));
 		}
 	});
 	
+	/* Gets navigation */
 	UWP.getNavigation();
-	UWP.navigate();
+	
+	/* Handles navigation between pages */
+	UWP.navigate(window.location.hash.split('=')[1], false);
+	window.onhashchange = function() {
+		UWP.navigate(window.location.hash.split('=')[1], false);
+	}
 		
 	/* Prepares space for document's title, puts it in place */
 	if(UWP.header.type === 'overlay') {
@@ -75,7 +84,7 @@ UWP.getConfig = function() {
 					var layoutTypeSource = config.querySelector('layoutType');
 					
 					if(pageTitleSource)
-						UWP.config.pageTitle = pageTitleSource.textContent;
+						UWP.config.pageTitle = document.title = pageTitleSource.textContent;
 					
 					if(layoutTypeSource)
 						UWP.config.layoutType = layoutTypeSource.textContent;
@@ -209,7 +218,7 @@ UWP.addMenuButton = function() {
 
 
 /* Puts content in place */
-UWP.navigate = function(target) {
+UWP.navigate = function(target, addHistory) {
 	console.log('UWP.navigate()');
 	
 	if(typeof target === 'undefined')
@@ -246,6 +255,10 @@ UWP.navigate = function(target) {
 						return childNode.nodeType === 4;
 					})[0].data;
 					
+					/* Pushes history state */
+					if(addHistory !== false)
+						history.pushState({}, pageTitle, window.location.href.split('#')[0] + '#page=' + target);
+					
 					/* Puts the new content in place */
 					UWP.main.innerHTML = pageBody;
 					
@@ -257,6 +270,7 @@ UWP.navigate = function(target) {
 					if(UWP.header.type === 'overlay') {
 						UWP.pageTitle.innerHTML = pageTitle;
 					}
+					document.title = pageTitle + ' - ' + UWP.config.pageTitle;
 					
 					/* Highlights current page */
 					toArray(document.querySelectorAll('nav a')).forEach(function(link) {
