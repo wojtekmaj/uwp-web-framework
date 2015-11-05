@@ -242,6 +242,10 @@ UWP.navigate = function(target) {
 					/* Puts the new content in place */
 					UWP.main.innerHTML = pageBody;
 					
+					UWP.main.classList.remove('start-animation');
+					UWP.main.offsetWidth = UWP.main.offsetWidth;
+					UWP.main.classList.add('start-animation');
+					
 					/* Puts the new page title in place */
 					if(UWP.header.type === 'pane-overlay') {
 						UWP.pageTitle.innerHTML = pageTitle;
