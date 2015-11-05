@@ -52,75 +52,6 @@ img {
 }
 
 
-/* Form */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="number"],
-select
-{
-    display: block;
-    width: 384px;
-    height: 32px;
-    max-width: 100%;
-    min-width: 80px;
-    margin: 4px 0;
-    padding: 0 11px;
-    font: inherit;
-    border: 2px solid rgb(150, 150, 150);
-}
-input[type="text"]:hover,
-input[type="email"]:hover,
-input[type="password"]:hover,
-input[type="number"]:hover,
-select:hover {
-    border-color: rgb(50, 50, 50);
-}
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="number"]:focus,
-select:focus {
-    border-color: rgb(0, 120, 215);
-}
-
-input[type="checkbox"] {
-    display: none;
-}
-input[type="checkbox"] + label:before {
-    content: '';
-    display: inline-block;
-    vertical-align: -2px;
-    width: 14px;
-    height: 14px;
-    color: white;
-    font-size: 14px;
-    line-height: 18px;
-    border: 2px solid rgb(50, 50, 50);
-    margin-right: 8px;
-}
-input[type="checkbox"] + label:hover:before {
-    border-color: rgb(0, 0, 0);
-}
-input[type="checkbox"]:checked + label:before {
-    background-color: rgb(0, 120, 215);
-    border-color: rgb(0, 120, 215);
-}
-input[type="checkbox"]:checked + label:hover:before {
-    border-color: rgb(0, 0, 0);
-}
-
-option {
-    height: 32px;
-    padding: 4px 11px;
-    font: inherit;
-    background-color: rgb(240, 240, 240);
-}
-option:hover {
-    background-color: rgb(220, 220, 220);
-}
-
-
 /* Top level navigation */
 header {
     width: 100%;
@@ -350,7 +281,75 @@ main {
     main a {
         color: rgb(0, 120, 215);
     }
+        
+    /* Form */
+    main input[type="text"],
+    main input[type="email"],
+    main input[type="password"],
+    main input[type="number"],
+    main select {
+        display: block;
+        width: 384px;
+        height: 32px;
+        max-width: 100%;
+        min-width: 80px;
+        margin: 4px 0;
+        padding: 0 11px;
+        font: inherit;
+        border: 2px solid rgb(150, 150, 150);
+    }
+    main input[type="text"]:hover,
+    main input[type="email"]:hover,
+    main input[type="password"]:hover,
+    main nput[type="number"]:hover,
+    main select:hover {
+        border-color: rgb(50, 50, 50);
+    }
+    main input[type="text"]:focus,
+    main input[type="email"]:focus,
+    main input[type="password"]:focus,
+    main input[type="number"]:focus,
+    main select:focus {
+        border-color: rgb(0, 120, 215);
+    }
+    main input[type="checkbox"] {
+        display: none;
+    }
+    main input[type="checkbox"] + label:before {
+        content: '';
+        display: inline-block;
+        vertical-align: -2px;
+        width: 14px;
+        height: 14px;
+        color: white;
+        font-size: 14px;
+        line-height: 18px;
+        border: 2px solid rgb(50, 50, 50);
+        margin-right: 8px;
+    }
+    main input[type="checkbox"] + label:hover:before {
+        border-color: rgb(0, 0, 0);
+    }
+    main input[type="checkbox"]:checked + label:before {
+        background-color: rgb(0, 120, 215);
+        border-color: rgb(0, 120, 215);
+    }
+    main input[type="checkbox"]:checked + label:hover:before {
+        border-color: rgb(0, 0, 0);
+    }
+    main input[disabled] {
+        opacity: 0.5;
+    }
     
+    main option {
+        height: 32px;
+        padding: 4px 11px;
+        font: inherit;
+        background-color: rgb(240, 240, 240);
+    }
+    main option:hover {
+        background-color: rgb(220, 220, 220);
+    }
     main button {
         margin: 0.18em 0;
         padding: 0.18em 1.8em;
@@ -369,6 +368,7 @@ main {
         background-color: rgb(150, 150, 150);
     }
     
+    /* Section */
     main section {
         padding: 12px;
     }
