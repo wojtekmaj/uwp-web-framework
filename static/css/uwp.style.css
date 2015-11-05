@@ -24,7 +24,7 @@ body {
 [data-layoutType="pane-overlay"] body {
     flex-direction: column;
 }
-[data-layoutType="pane-semidocked"] body {
+[data-layoutType="docked-minimized"] body {
     flex-direction: row;
 }
 
@@ -239,7 +239,7 @@ header[data-style="tabs"] {
         color: rgb(50, 50, 50);
     }
               
-[data-layoutType="pane-semidocked"] header {
+[data-layoutType="docked-minimized"] header {
     width: 44px;
     height: 100%;
     background: rgb(250, 250, 250);
@@ -247,7 +247,7 @@ header[data-style="tabs"] {
     
     display: flex;
 }
-    [data-layoutType="pane-semidocked"] header button {
+    [data-layoutType="docked-minimized"] header button {
         width: 44px;
         height: 44px;
         border: 0;
@@ -257,10 +257,10 @@ header[data-style="tabs"] {
         z-index: 2;
         font-size: 20px;
     }
-    [data-layoutType="pane-semidocked"] header button:hover {
+    [data-layoutType="docked-minimized"] header button:hover {
         background-color: rgb(218, 218, 218);
     }
-    [data-layoutType="pane-semidocked"] header nav:nth-of-type(1) {
+    [data-layoutType="docked-minimized"] header nav:nth-of-type(1) {
         width: 250px;
         padding-top: 44px;
         background: rgb(230, 230, 230);
@@ -279,45 +279,45 @@ header[data-style="tabs"] {
         
         font-size: 15px;
     }
-    [data-layoutType="pane-semidocked"] header nav:nth-of-type(1).active {
+    [data-layoutType="docked-minimized"] header nav:nth-of-type(1).active {
         clip: rect(0px, 250px, 9999px, 0px);
     }
-        [data-layoutType="pane-semidocked"] header nav:nth-of-type(1) ul {
+        [data-layoutType="docked-minimized"] header nav:nth-of-type(1) ul {
             width: 100%;
         }
         /* Fills the space to push the last menu to the very bottom */
-        [data-layoutType="pane-semidocked"] header nav:nth-of-type(1) ul:nth-last-of-type(2) {
+        [data-layoutType="docked-minimized"] header nav:nth-of-type(1) ul:nth-last-of-type(2) {
             flex-grow: 1;
         }
-        [data-layoutType="pane-semidocked"] header nav:nth-of-type(1) ul:last-of-type {
+        [data-layoutType="docked-minimized"] header nav:nth-of-type(1) ul:last-of-type {
             flex-shrink: 1;
         }
-        [data-layoutType="pane-semidocked"] header nav:nth-of-type(1) ul:not(:first-of-type) {
+        [data-layoutType="docked-minimized"] header nav:nth-of-type(1) ul:not(:first-of-type) {
             border-top: 1px solid rgb(200, 200, 200);
             margin-top: 10px;
             padding-top: 10px;
         }
-            [data-layoutType="pane-semidocked"] header nav:nth-of-type(1) ul li {
+            [data-layoutType="docked-minimized"] header nav:nth-of-type(1) ul li {
                 width: 100%;
                 height: 44px;
                 
                 line-height: 0; /* Edge fix */
             }
-            [data-layoutType="pane-semidocked"] header nav:nth-of-type(1) ul li.active {
+            [data-layoutType="docked-minimized"] header nav:nth-of-type(1) ul li.active {
                 color: white;
                 background-color: rgb(0, 120, 215);
             }
-            [data-layoutType="pane-semidocked"] header nav:nth-of-type(1) ul li:not(.active):hover {
+            [data-layoutType="docked-minimized"] header nav:nth-of-type(1) ul li:not(.active):hover {
                 background-color: rgb(205, 205, 205);
             }
-                [data-layoutType="pane-semidocked"] header nav:nth-of-type(1) ul li a {
+                [data-layoutType="docked-minimized"] header nav:nth-of-type(1) ul li a {
                     width: 100%;
                     height: 100%;
                     padding: 10px;
                     display: flex;
                     line-height: 24px;
                 }
-                    [data-layoutType="pane-semidocked"] header nav:nth-of-type(1) ul li a span {
+                    [data-layoutType="docked-minimized"] header nav:nth-of-type(1) ul li a span {
                         width: 24px;
                         height: 24px;
                         
@@ -326,7 +326,7 @@ header[data-style="tabs"] {
                         font-size: 16px;
                         text-align: center;
                     }
-    [data-layoutType="pane-semidocked"] header nav:nth-of-type(2) {
+    [data-layoutType="docked-minimized"] header nav:nth-of-type(2) {
         height: 24px;
         margin: 10px;
         
@@ -335,7 +335,7 @@ header[data-style="tabs"] {
         color: rgb(50, 50, 50);
     }
               
-[data-layoutType="pane-docked"] header {
+[data-layoutType="docked"] header {
     width: 250px;
     height: 100%;
     background: rgb(250, 250, 250);
@@ -343,7 +343,7 @@ header[data-style="tabs"] {
     
     display: flex;
 }
-    [data-layoutType="pane-docked"] header nav:nth-of-type(1) {
+    [data-layoutType="docked"] header nav:nth-of-type(1) {
         width: 250px;
         background: rgb(230, 230, 230);
         
@@ -358,42 +358,42 @@ header[data-style="tabs"] {
         
         font-size: 15px;
     }
-        [data-layoutType="pane-docked"] header nav:nth-of-type(1) ul {
+        [data-layoutType="docked"] header nav:nth-of-type(1) ul {
             width: 100%;
         }
         /* Fills the space to push the last menu to the very bottom */
-        [data-layoutType="pane-docked"] header nav:nth-of-type(1) ul:nth-last-of-type(2) {
+        [data-layoutType="docked"] header nav:nth-of-type(1) ul:nth-last-of-type(2) {
             flex-grow: 1;
         }
-        [data-layoutType="pane-docked"] header nav:nth-of-type(1) ul:last-of-type {
+        [data-layoutType="docked"] header nav:nth-of-type(1) ul:last-of-type {
             flex-shrink: 1;
         }
-        [data-layoutType="pane-docked"] header nav:nth-of-type(1) ul:not(:first-of-type) {
+        [data-layoutType="docked"] header nav:nth-of-type(1) ul:not(:first-of-type) {
             border-top: 1px solid rgb(200, 200, 200);
             margin-top: 10px;
             padding-top: 10px;
         }
-            [data-layoutType="pane-docked"] header nav:nth-of-type(1) ul li {
+            [data-layoutType="docked"] header nav:nth-of-type(1) ul li {
                 width: 100%;
                 height: 44px;
                 
                 line-height: 0; /* Edge fix */
             }
-            [data-layoutType="pane-docked"] header nav:nth-of-type(1) ul li.active {
+            [data-layoutType="docked"] header nav:nth-of-type(1) ul li.active {
                 color: white;
                 background-color: rgb(0, 120, 215);
             }
-            [data-layoutType="pane-docked"] header nav:nth-of-type(1) ul li:not(.active):hover {
+            [data-layoutType="docked"] header nav:nth-of-type(1) ul li:not(.active):hover {
                 background-color: rgb(205, 205, 205);
             }
-                [data-layoutType="pane-docked"] header nav:nth-of-type(1) ul li a {
+                [data-layoutType="docked"] header nav:nth-of-type(1) ul li a {
                     width: 100%;
                     height: 100%;
                     padding: 10px;
                     display: flex;
                     line-height: 24px;
                 }
-                    [data-layoutType="pane-docked"] header nav:nth-of-type(1) ul li a span {
+                    [data-layoutType="docked"] header nav:nth-of-type(1) ul li a span {
                         width: 24px;
                         height: 24px;
                         
@@ -402,7 +402,7 @@ header[data-style="tabs"] {
                         font-size: 16px;
                         text-align: center;
                     }
-    [data-layoutType="pane-docked"] header nav:nth-of-type(2) {
+    [data-layoutType="docked"] header nav:nth-of-type(2) {
         height: 24px;
         margin: 10px;
         

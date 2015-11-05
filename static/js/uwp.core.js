@@ -16,7 +16,7 @@ var UWP = {};
 /* Default config */
 UWP.config = {
 	pageTitle: 'UWP web framework',
-	layoutType: 'pane-overlay'
+	layoutType: 'overlay'
 }
 
 
@@ -51,7 +51,7 @@ UWP.init = function(params) {
 	UWP.navigate();
 		
 	/* Prepares space for document's title, puts it in place */
-	if(UWP.header.type === 'pane-overlay') {
+	if(UWP.header.type === 'overlay') {
 		UWP.pageTitle = document.createElement('span');
 		
 		UWP.header.prependChild(UWP.pageTitle);
@@ -186,8 +186,8 @@ UWP.addMenuButton = function() {
 	console.log('UWP.addMenuButton()');
 	
 	if(
-		UWP.header.type === 'pane-overlay' ||
-		UWP.header.type === 'pane-semidocked'
+		UWP.header.type === 'overlay' ||
+		UWP.header.type === 'docked-minimized'
 	) {
 		UWP.menuButton = document.createElement('button');
 		UWP.menuButton.innerHTML = '&#xE700;';
@@ -254,7 +254,7 @@ UWP.navigate = function(target) {
 					UWP.main.classList.add('start-animation');
 					
 					/* Puts the new page title in place */
-					if(UWP.header.type === 'pane-overlay') {
+					if(UWP.header.type === 'overlay') {
 						UWP.pageTitle.innerHTML = pageTitle;
 					}
 					

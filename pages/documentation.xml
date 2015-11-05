@@ -24,14 +24,14 @@
                 <h5>Available config attributes:</h5>
                 <ul>
                     <li><strong>pageTitle</strong> <em>(string)</em> - specifies page title.</li>
-                    <li><strong>layoutType</strong> <em>([tabs, pane-overlay, pane-semidocked, pane-docked], default: pane-overlay)</em> - specifies header type. See "Available layout types" for more information.</li>
+                    <li><strong>layoutType</strong> <em>([tabs, overlay, docked-minimized, docked], default: overlay)</em> - specifies header type. See "Available layout types" for more information.</li>
                 </ul>
                 <h5>Available layout types</h5>
                 <ul>
                     <li><strong>tabs</strong> - displays as a tab bar at the top of the page. Similar to what can be found in Phone app.</li>
-                    <li><strong>pane-overlay</strong> - displays as a menu activated using a button in top-left corner. Typical hamburger menu. Similar to what can be found in Store app.</li>
-                    <li><strong>pane-semidocked</strong> - displays as a menu activated using a button in top-left corner. While deactivated, the icons of all menu options are still displayed and active. Similar to what can be found in Groove Music app.</li>
-                    <li><strong>pane-docked</strong> - displays as a menu that's always visible on the page. Similar to what can be found in Groove Music app.</li>
+                    <li><strong>overlay</strong> - displays as a menu activated using a button in top-left corner. Typical hamburger menu. Similar to what can be found in Store app.</li>
+                    <li><strong>docked-minimized</strong> - displays as a menu activated using a button in top-left corner. While deactivated, the icons of all menu options are still displayed and active. Similar to what can be found in Groove Music app.</li>
+                    <li><strong>docked</strong> - displays as a menu that's always visible on the page. Similar to what can be found in Groove Music app.</li>
                 </ul>
                 <h4>Navigation</h4>
                 <p>Navigations are created by creating an XML files in nav folder. default.xml is used by default. If you want to amend main menu items, you need to edit that file.</p>

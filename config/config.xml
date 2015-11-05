@@ -1,4 +1,4 @@
 <config>
 	<pageTitle>UWP web framework</pageTitle>
-	<layoutType>pane-semidocked</layoutType>
+	<layoutType>docked-minimized</layoutType>
 </config>
