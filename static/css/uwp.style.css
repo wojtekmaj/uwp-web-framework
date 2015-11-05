@@ -64,13 +64,13 @@ input[type="number"]
     max-width: 100%;
     min-width: 80px;
     padding: 0 11px;
-    border: 2px solid rgb(150, 150, 150);
+    border: 2px solid rgb(50, 50, 50);
 }
 input[type="text"]:hover,
 input[type="email"]:hover,
 input[type="password"]:hover,
 input[type="number"]:hover {
-    border-color: rgb(100, 100, 100);
+    border-color: rgb(0, 0, 0);
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
