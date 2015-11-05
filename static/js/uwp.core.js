@@ -16,7 +16,7 @@ var UWP = {};
 /* Default config */
 UWP.config = {
 	pageTitle: 'UWP web framework',
-	headerType: 'pane'
+	layoutType: 'pane-overlay'
 }
 
 
@@ -25,6 +25,7 @@ UWP.init = function(params) {
 	console.log('UWP.init()');
 	
 	/* Define main elements */
+	UWP.body = document.body;
 	UWP.header = document.querySelector('header');	
 	UWP.main = document.querySelector('main');
 	
@@ -36,11 +37,11 @@ UWP.init = function(params) {
 	UWP.getConfig();
 	
 	/* Define additional variables */
-	UWP.header.type = UWP.config.headerType;
-	UWP.header.setAttribute('data-style', UWP.header.type);
+	UWP.header.type = UWP.config.layoutType;
+	UWP.body.setAttribute('data-layoutType', UWP.header.type);
 		
 	/* Prepares space for document's title, puts it in place */
-	if(UWP.header.type === 'pane') {
+	if(UWP.header.type === 'pane-overlay') {
 		UWP.pageTitle = document.createElement('span');
 		
 		UWP.header.prependChild(UWP.pageTitle);
@@ -64,13 +65,13 @@ UWP.getConfig = function() {
 				if(UWP_config_request.responseXML) {
 					var config = UWP_config_request.responseXML.querySelector('config');
 					var pageTitleSource = config.querySelector('pageTitle');
-					var headerTypeSource = config.querySelector('headerType');
+					var layoutTypeSource = config.querySelector('layoutType');
 					
 					if(pageTitleSource)
 						UWP.config.pageTitle = pageTitleSource.textContent;
 					
-					if(headerTypeSource)
-						UWP.config.headerType = headerTypeSource.textContent;
+					if(layoutTypeSource)
+						UWP.config.layoutType = layoutTypeSource.textContent;
 				}
 				else {
 					console.error('Invalid response.');
@@ -102,6 +103,7 @@ UWP.getNavigation = function(target) {
 		
 		var navLink = document.createElement('a');
 		navLink.href = '#'
+		navLink.title = navLabel;
 		navLink.innerHTML = navLabel;
 		if(navIconSource) {
 			var navIcon = document.createElement('span');
@@ -176,14 +178,17 @@ UWP.getNavigation = function(target) {
 UWP.addMenuButton = function() {
 	console.log('UWP.addMenuButton()');
 	
-	if(UWP.header.type === 'pane') {
+	if(
+		UWP.header.type === 'pane-overlay' ||
+		UWP.header.type === 'pane-semidocked'
+	) {
 		UWP.menuButton = document.createElement('button');
 		UWP.menuButton.innerHTML = '&#xE700;';
 		UWP.menuButton.setAttribute('aria-label', 'Menu');
 		
 		UWP.menuList = UWP.header.querySelector('header nav');
 		
-		UWP.header.addEventListener('click', function() {
+		UWP.menuButton.addEventListener('click', function() {
 			UWP.menuList.classList.toggle('active');
 		});
 		
@@ -238,7 +243,7 @@ UWP.navigate = function(target) {
 					UWP.main.innerHTML = pageBody;
 					
 					/* Puts the new page title in place */
-					if(UWP.header.type === 'pane') {
+					if(UWP.header.type === 'pane-overlay') {
 						UWP.pageTitle.innerHTML = pageTitle;
 					}
 					

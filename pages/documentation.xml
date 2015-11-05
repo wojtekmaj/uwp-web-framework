@@ -23,8 +23,8 @@
                 <h5>Available config attributes:</h5>
                 <ul>
                     <li><strong>pageTitle</strong> <em>(string)</em> - specifies page title.</li>
-                    <li><strong>headerType</strong> <em>([tabs, pane], default: pane)</em> - specifies header type.</li>
-                </ul>
+                    <li><strong>layoutType</strong> <em>([tabs, pane-overlay, pane-semidocked, pane-docked], default: pane-overlay)</em> - specifies header type. See "Available layout types" for more information.</li>
+                <h5>Available layout typesd</h5>
                 <h4>Navigation</h4>
                 <p>Navigations are created by creating an XML files in nav folder. default.xml is used by default. If you want to amend main menu items, you need to edit that file.</p>
                 <p>There are several navigation areas that you can amend using that file.</p>
@@ -35,7 +35,7 @@
                 <p>Each navigation area might consist of several navigation lists. Each navigation area will treat them a little differently to match UWP design guidelines.</p>
                 <h5>Default navigation areas behavior:</h5>
                 <ul>
-                    <li><strong>mainMenu</strong> - If you use headerType pane: All the lists but the last one will be separated from the others with a line. The last list is fixed to the bottom of the navigation pane. If you use headerType tabs: All the list but the first one will be hidden.</li>
+                    <li><strong>mainMenu</strong> - If you use layoutType pane-*: All the lists but the last one will be separated from the others with a line. The last list is fixed to the bottom of the navigation pane. If you use layoutType tabs: All the list but the first one will be hidden.</li>
                 </ul>
                 <p>Each navigation list might consist of several elements.</p>
                 <h5>Available navigation list elements attributes:</h5>

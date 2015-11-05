@@ -1,4 +1,4 @@
 <config>
 	<pageTitle>UWP web framework</pageTitle>
-	<headerType>pane</headerType>
+	<layoutType>pane-semidocked</layoutType>
 </config>
