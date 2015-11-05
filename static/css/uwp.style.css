@@ -8,6 +8,7 @@
     font-family: inherit;
 }
 
+
 body {
     font-family: Segoe UI, Segoe MDL2 Assets;
     font-size: 15px;
@@ -20,6 +21,7 @@ body {
     
     overflow: hidden;
 }
+
 
 h1 {
     display: none;
@@ -48,6 +50,58 @@ h5 {
 img {
     max-width: 100%;
 }
+
+
+/* Form */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"]
+{
+    display: block;
+    width: 384px;
+    height: 32px;
+    max-width: 100%;
+    min-width: 80px;
+    padding: 0 11px;
+    border: 2px solid rgb(150, 150, 150);
+}
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="number"]:hover {
+    border-color: rgb(100, 100, 100);
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus {
+    border-color: rgb(0, 120, 215);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+input[type="checkbox"] + label:before {
+    content: '';
+    display: inline-block;
+    vertical-align: -2px;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgb(50, 50, 50);
+    margin-right: 8px;
+}
+input[type="checkbox"] + label:hover:before {
+    border-color: rgb(0, 0, 0);
+}
+input[type="checkbox"]:checked + label:before {
+    background-color: rgb(0, 120, 215);
+    border-color: rgb(0, 120, 215);
+}
+input[type="checkbox"]:checked + label:hover:before {
+    border-color: rgb(0, 0, 0);
+}
+
 
 /* Top level navigation */
 header {
