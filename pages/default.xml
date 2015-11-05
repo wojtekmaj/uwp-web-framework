@@ -6,7 +6,7 @@
             <section>
                 <h3>Hello!</h3>
                 <p>Welcome to Universal Windows Platform web framework.</p>
-                <p>Create web-based Universal Windows Platform applications in a blink of an eye! Use basic HTML syntax, follow automatic hints in your developer console, and let UWP web framework do all the work for you!</p>
+                <p>Create web-based Universal Windows Platform applications in a blink of an eye! Use basic HTML syntax, and let UWP web framework do all the work for you!</p>
             </section>
         ]]>
     </body>
