@@ -11,7 +11,7 @@
                     <li>…that's all!</li>
                 </ul>
                 <h4>Browser support</h4>
-                <p>Universal Windows Platform web framework was created specifically to help developers create web-based UWP apps. Therefore it's best supported by Microsoft Edgem, although it should look almost perfect in the following browsers:</p>
+                <p>Universal Windows Platform web framework was created specifically to help developers create web-based UWP apps. Therefore it's best supported by Microsoft Edge, although it should look almost perfect in the following browsers:</p>
                 <ul>
                     <li><strong>Edge</strong> (all versions)</li>
                     <li><strong>Chrome</strong> (version 29 or later)</li>
