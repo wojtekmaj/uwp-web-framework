@@ -186,7 +186,9 @@ header {
 		vertical-align: top;
 		position: relative;
 		z-index: 2;
+
 		font-size: 20px;
+		color: inherit;
 	}
 	[data-layoutType="overlay"] header button:hover {
 		background-color: rgb(218, 218, 218);
@@ -305,7 +307,9 @@ header {
 		vertical-align: top;
 		position: relative;
 		z-index: 2;
+
 		font-size: 20px;
+		color: inherit;
 	}
 	[data-layoutType="docked-minimized"] header button:hover {
 		background-color: rgb(218, 218, 218);
