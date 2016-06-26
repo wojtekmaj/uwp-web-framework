@@ -181,6 +181,7 @@ header {
 		width: 44px;
 		height: 44px;
 		border: 0;
+		outline: none;
 		background-color: transparent;
 		vertical-align: top;
 		position: relative;
@@ -302,6 +303,7 @@ header {
 		width: 44px;
 		height: 44px;
 		border: 0;
+		outline: none;
 		background-color: transparent;
 		vertical-align: top;
 		position: relative;
