@@ -205,6 +205,19 @@ UWP.getNavigation = function(target) {
 };
 
 
+/* Highlights current page in navigation */
+UWP.updateNavigation = function() {
+	console.log('UWP.updateNavigation()');
+
+	toArray(document.querySelectorAll('nav a')).forEach(function(link) {
+		if(link.getAttribute('data-target') == UWP.config.currentPage)
+			link.parentElement.classList.add('active');
+		else
+			link.parentElement.classList.remove('active');
+	});
+};
+
+
 /* Creates custom styles based on config */
 UWP.createStyles = function() {
 	console.log('UWP.createStyles()');
@@ -350,6 +363,8 @@ UWP.navigate = function(target, addHistory) {
 
 			UWP.navigate(target);
 		});
+
+		UWP.updateNavigation();
 	}
 
 	var URL = 'pages/' + target + '.xml';
@@ -379,13 +394,7 @@ UWP.navigate = function(target, addHistory) {
 					}
 					document.title = pageTitle + ' - ' + UWP.config.pageTitle;
 
-					/* Highlights current page */
-					toArray(document.querySelectorAll('nav a')).forEach(function(link) {
-						if(link.getAttribute('data-target') == UWP.config.currentPage)
-							link.parentElement.classList.add('active');
-						else
-							link.parentElement.classList.remove('active');
-					});
+					UWP.updateNavigation();
 				}
 				else {
 					console.error('Something went wrong');
