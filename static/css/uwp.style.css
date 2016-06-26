@@ -543,8 +543,8 @@ nav[data-type="commands"] {
 /* Content */
 main {
 	background: rgb(255, 255, 255);
-	color: rgb(102, 102, 102);
-	
+	color: rgba(0, 0, 0, 0.8); /* 102, 102, 102 */
+
 	flex-grow: 1;
 	overflow-y: auto;
 }
