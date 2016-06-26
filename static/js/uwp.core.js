@@ -173,13 +173,13 @@ UWP.getNavigation = function(target) {
 				if(UWP_navigation_request.responseXML) {
 					var navsSource = UWP_navigation_request.responseXML.querySelector('mainMenu');
 					
-					var nav = document.createElement('nav');
 					
+					UWP.nav = document.createElement('nav');
 					/* Adds all the navigations to the DOM tree */
 					toArray(navsSource.querySelectorAll('list')).forEach(function(navSource) {
 						var navMain = document.createElement('ul');
-						nav.appendChild(navMain);
 						
+						UWP.nav.appendChild(navMain);
 						toArray(navSource.querySelectorAll('el')).forEach(function(el) {
 							navMain.appendChild(parseNavElement(el));
 						});
@@ -187,7 +187,7 @@ UWP.getNavigation = function(target) {
 					
 					/* If navigation was constructed, adds it to the DOM tree and displays menu button */
 					if(toArray(navsSource.querySelectorAll('list')).length) {
-						UWP.header.appendChild(nav);
+						UWP.header.appendChild(UWP.nav);
 						UWP.addMenuButton();
 					}
 				}
