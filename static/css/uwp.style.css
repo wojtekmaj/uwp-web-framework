@@ -61,7 +61,7 @@ img {
 /* Top level navigation */
 header {
 	position: relative;
-	z-index: 1;
+	z-index: 997;
 }
 	header nav {
 	}
@@ -185,7 +185,7 @@ header {
 		background-color: transparent;
 		vertical-align: top;
 		position: relative;
-		z-index: 2;
+		z-index: 999;
 
 		font-size: 20px;
 		color: inherit;
@@ -209,7 +209,7 @@ header {
 		top: 0;
 		left: -250px;
 		bottom: 0;
-		z-index: 1;
+		z-index: 998;
 
 		display: flex;
 		flex-direction: column;
@@ -307,7 +307,7 @@ header {
 		background-color: transparent;
 		vertical-align: top;
 		position: relative;
-		z-index: 2;
+		z-index: 999;
 
 		font-size: 20px;
 		color: inherit;
@@ -331,7 +331,7 @@ header {
 		top: 0;
 		left: 0;
 		bottom: 0;
-		z-index: 1;
+		z-index: 998;
 
 		display: flex;
 		flex-direction: column;
