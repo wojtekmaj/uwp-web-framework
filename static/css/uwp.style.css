@@ -170,7 +170,6 @@ header {
 		font-size: 15px;
 		font-weight: 700;
 		line-height: 24px;
-		color: rgb(50, 50, 50);
 	}
 	[data-layoutType="overlay"].theme-light header > span {
 		border-left-color: rgba(0, 0, 0, 0.2);
