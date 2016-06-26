@@ -150,7 +150,6 @@ header {
 	color: rgb(50, 50, 50);
 	
 	display: flex;
-}	  
 }
 [data-layoutType="overlay"].theme-light header {
 	color: rgba(0, 0, 0, 0.78); /* 50, 50, 50 */
@@ -289,6 +288,7 @@ header {
 	color: rgb(50, 50, 50);
 	
 	display: flex;
+    flex-shrink: 0;
 }
 [data-layoutType="docked-minimized"].theme-light header {
 	color: rgba(0, 0, 0, 0.78); /* 50, 50, 50 */
