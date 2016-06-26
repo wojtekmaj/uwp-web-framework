@@ -53,6 +53,9 @@ UWP.init = function(params) {
 	/* Gets navigation */
 	UWP.getNavigation();
 	
+	/* Creates custom styles */
+	UWP.createStyles();
+
 	/* Handles navigation between pages */
 	UWP.navigate(window.location.hash.split('=')[1], false);
 	window.onhashchange = function() {
@@ -82,12 +85,24 @@ UWP.getConfig = function() {
 					var config = UWP_config_request.responseXML.querySelector('config');
 					var pageTitleSource = config.querySelector('pageTitle');
 					var layoutTypeSource = config.querySelector('layoutType');
-					
-					if(pageTitleSource)
+					var mainColor = config.querySelector('mainColor');
+					var activeColor = config.querySelector('activeColor');
+
+					if(pageTitleSource) {
 						UWP.config.pageTitle = document.title = pageTitleSource.textContent;
-					
-					if(layoutTypeSource)
+					}
+
+					if(layoutTypeSource) {
 						UWP.config.layoutType = layoutTypeSource.textContent;
+					}
+
+					if(mainColor) {
+						UWP.config.mainColor = mainColor.textContent;
+					}
+
+					if(activeColor) {
+						UWP.config.activeColor = activeColor.textContent;
+					}
 				}
 				else {
 					console.error('Invalid response.');
@@ -187,6 +202,98 @@ UWP.getNavigation = function(target) {
 	}
 	UWP_navigation_request.open('GET', URL, true);
 	UWP_navigation_request.send(null);
+};
+
+
+/* Creates custom styles based on config */
+UWP.createStyles = function() {
+	console.log('UWP.createStyles()');
+
+	UWP.customStyle = document.createElement('style');
+
+	if(UWP.config.mainColor) {
+		var mainColor_RGB = UWP.config.mainColor.match(/rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/);
+
+		if(mainColor_RGB) {
+			mainColor_RGB = mainColor_RGB.slice(1);
+
+			var brightness = mainColor_RGB.reduce((p, c) => { p += parseInt(c, 10); return p; }, 0) / 3;
+
+			if(brightness >= 128) {
+				UWP.body.classList.add('theme-light');
+			}
+			else {
+				UWP.body.classList.add('theme-dark');
+			}
+
+			mainColorDarkened = mainColor_RGB.map(color => {
+				newColor = color - 20;
+				if(newColor < 0) newColor = 0;
+				return newColor;
+			});
+
+			UWP.config.mainColorDarkened = `rgb(${mainColorDarkened})`;
+		}
+
+		UWP.customStyle.innerHTML += `
+			[data-layoutType="tabs"] header {
+				background: ${UWP.config.mainColor};
+			}
+			[data-layoutType="overlay"] header {
+				background: ${UWP.config.mainColor};
+			}
+				[data-layoutType="overlay"] header nav:nth-of-type(1) {
+				background-color: ${UWP.config.mainColor}; // @TODO: Darkened?
+				}
+			[data-layoutType="docked-minimized"] header {
+				background: ${UWP.config.mainColor};
+			}
+				[data-layoutType="docked-minimized"] header nav:nth-of-type(1) {
+					background: ${UWP.config.mainColor}; // @TODO: Darkened?
+				}
+			[data-layoutType="docked"] header {
+				background: ${UWP.config.mainColor};
+			}
+				[data-layoutType="docked"] header nav:nth-of-type(1) {
+					background: ${UWP.config.mainColor}; // @TODO: Darkened?
+				}
+		`;
+	}
+
+	if(UWP.config.activeColor) {
+		var activeColor_RGB = UWP.config.activeColor.match(/rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/);
+
+		if(activeColor_RGB) {
+			activeColor_RGB = activeColor_RGB.slice(1);
+
+			var brightness = activeColor_RGB.reduce((p, c) => { p += parseInt(c, 10); return p; }, 0) / 3;
+
+			if(brightness >= 128) {
+				UWP.body.classList.add('active-light');
+			}
+			else {
+				UWP.body.classList.add('active-dark');
+			}
+		}
+
+		UWP.customStyle.innerHTML += `
+			[data-layoutType="tabs"] header nav:nth-of-type(1) ul li.active {
+				color: ${UWP.config.activeColor};
+				border-bottom-color: ${UWP.config.activeColor};
+			}
+			[data-layoutType="overlay"] header nav:nth-of-type(1) ul li.active {
+				background-color: ${UWP.config.activeColor};
+			}
+			[data-layoutType="docked-minimized"] header nav:nth-of-type(1) ul li.active {
+				background-color: ${UWP.config.activeColor};
+			}
+			[data-layoutType="docked"] header nav:nth-of-type(1) ul li.active {
+				background-color: ${UWP.config.activeColor};
+			}
+		`;
+	}
+
+	UWP.body.appendChild(UWP.customStyle);
 };
 
 
