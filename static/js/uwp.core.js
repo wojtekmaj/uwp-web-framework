@@ -23,36 +23,36 @@ UWP.config = {
 /* Main init function */
 UWP.init = function(params) {
 	console.log('UWP.init()');
-	
+
 	/* Define main elements */
 	UWP.head = document.head;
 	UWP.body = document.body;
-	UWP.header = document.querySelector('header');	
+	UWP.header = document.querySelector('header');
 	UWP.main = document.querySelector('main');
-	
+
 	/* A little cleanup */
 	UWP.header.innerHTML = '';
 	UWP.main.innerHTML = '';
-	
+
 	/* Gets user-set config */
 	UWP.getConfig();
-	
+
 	/* Define additional variables */
 	UWP.header.type = UWP.config.layoutType;
 	UWP.body.setAttribute('data-layoutType', UWP.header.type);
-	
+
 	/* Handles clicking internal links */
 	UWP.body.addEventListener('click', function(event) {
 		if(event.target.getAttribute('data-target') !== null) {
 			event.preventDefault();
-			
+
 			UWP.navigate(event.target.getAttribute('data-target'));
 		}
 	});
-	
+
 	/* Gets navigation */
 	UWP.getNavigation();
-	
+
 	/* Creates custom styles */
 	UWP.createStyles();
 
@@ -61,11 +61,11 @@ UWP.init = function(params) {
 	window.onhashchange = function() {
 		UWP.navigate(window.location.hash.split('=')[1], false);
 	}
-		
+
 	/* Prepares space for document's title, puts it in place */
 	if(UWP.header.type === 'overlay') {
 		UWP.pageTitle = document.createElement('span');
-		
+
 		UWP.header.prependChild(UWP.pageTitle);
 	}
 }
@@ -74,9 +74,9 @@ UWP.init = function(params) {
 /* Gets document's navigation, puts it in place */
 UWP.getConfig = function() {
 	console.log('UWP.getConfig()');
-	
+
 	var URL = 'config/config.xml';
-	
+
 	var UWP_config_request = new XMLHttpRequest();
 	UWP_config_request.onreadystatechange = function() {
 		if(UWP_config_request.readyState == 4) {
@@ -121,24 +121,24 @@ UWP.getConfig = function() {
 /* Gets document's navigation, puts it in place */
 UWP.getNavigation = function(target) {
 	console.log('UWP.getNavigation()');
-	
+
 	if(typeof target === 'undefined')
 		target = 'default';
-	
+
 	function parseNavElement(el) {
 		var navLabel = el.querySelector('label').textContent;
 		var navTarget = el.querySelector('target').textContent;
 		var navIconSource = el.querySelector('icon');
-		
+
 		var navElement = document.createElement('li');
-		
+
 		var navLink = document.createElement('a');
 		navLink.href = '#'
 		navLink.title = navLabel;
 		navLink.innerHTML = navLabel;
 		if(navIconSource) {
 			var navIcon = document.createElement('span');
-			
+
 			/* If that's a file, we'll create an img object with src pointed to it */
 			if(/\.(jpg|png|gif|svg)/.test(navIconSource.textContent)) {
 				var navIconImage = document.createElement('img');
@@ -149,42 +149,42 @@ UWP.getNavigation = function(target) {
 			else {
 				navIcon.innerHTML = navIconSource.textContent;
 			}
-			
+
 			navLink.prependChild(navIcon);
 		}
 		navLink.addEventListener('click', function(event) {
 			event.preventDefault();
-			
+
 			UWP.navigate(navTarget);
 		});
 		navLink.setAttribute('data-target', navTarget)
-		
+
 		navElement.appendChild(navLink)
-		
+
 		return navElement;
 	}
-	
+
 	var URL = 'nav/' + target + '.xml';
-	
+
 	var UWP_navigation_request = new XMLHttpRequest();
 	UWP_navigation_request.onreadystatechange = function() {
 		if(UWP_navigation_request.readyState == 4) {
 			if(UWP_navigation_request.status == 200) {
 				if(UWP_navigation_request.responseXML) {
 					var navsSource = UWP_navigation_request.responseXML.querySelector('mainMenu');
-					
-					
+
 					UWP.nav = document.createElement('nav');
+
 					/* Adds all the navigations to the DOM tree */
 					toArray(navsSource.querySelectorAll('list')).forEach(function(navSource) {
 						var navMain = document.createElement('ul');
-						
 						UWP.nav.appendChild(navMain);
+
 						toArray(navSource.querySelectorAll('el')).forEach(function(el) {
 							navMain.appendChild(parseNavElement(el));
 						});
 					});
-					
+
 					/* If navigation was constructed, adds it to the DOM tree and displays menu button */
 					if(toArray(navsSource.querySelectorAll('list')).length) {
 						UWP.header.appendChild(UWP.nav);
@@ -300,7 +300,7 @@ UWP.createStyles = function() {
 /* Puts a menu button in title bar */
 UWP.addMenuButton = function() {
 	console.log('UWP.addMenuButton()');
-	
+
 	if(
 		UWP.header.type === 'overlay' ||
 		UWP.header.type === 'docked-minimized'
@@ -308,17 +308,17 @@ UWP.addMenuButton = function() {
 		UWP.menuButton = document.createElement('button');
 		UWP.menuButton.innerHTML = '&#xE700;';
 		UWP.menuButton.setAttribute('aria-label', 'Menu');
-		
+
 		UWP.menuList = UWP.header.querySelector('header nav');
-		
+
 		UWP.menuButton.addEventListener('click', function() {
 			UWP.menuList.classList.toggle('active');
 		});
-		
+
 		UWP.main.addEventListener('click', function() {
 			UWP.menuList.classList.remove('active');
 		});
-		
+
 		UWP.header.prependChild(UWP.menuButton);
 	}
 };
@@ -327,33 +327,33 @@ UWP.addMenuButton = function() {
 /* Puts content in place */
 UWP.navigate = function(target, addHistory) {
 	console.log('UWP.navigate()');
-	
+
 	if(typeof target === 'undefined')
 		target = 'default';
-		
+
 	UWP.config.currentPage = target;
-					
+
 	/* Pushes history state */
 	if(addHistory !== false)
 		history.pushState('', '', window.location.href.split('#')[0] + '#page=' + target);
-		
+
 	/* Clears the page content */
 	UWP.main.classList.remove('error');
 	UWP.main.innerHTML = '';
-	
+
 	/* Displays error message */
 	function displayError(title) {
 		UWP.main.classList.add('error');
 		UWP.main.innerHTML = '<h3>' + title + '</h3><p>Ready for an adventure?</p><p><a href="#">Try again</a>'
 		UWP.main.querySelector('a').addEventListener('click', function(event) {
 			event.preventDefault();
-			
+
 			UWP.navigate(target);
 		});
 	}
-		
+
 	var URL = 'pages/' + target + '.xml';
-	
+
 	/* Requests page data */
 	var UWP_navigate_request = new XMLHttpRequest();
 	UWP_navigate_request.onreadystatechange = function() {
@@ -365,20 +365,20 @@ UWP.navigate = function(target, addHistory) {
 					var pageBody = toArray(page.querySelector('body').childNodes).filter(function(childNode) {
 						return childNode.nodeType === 4;
 					})[0].data;
-					
+
 					/* Puts the new content in place */
 					UWP.main.innerHTML = pageBody;
-					
+
 					UWP.main.classList.remove('start-animation');
 					UWP.main.offsetWidth = UWP.main.offsetWidth;
 					UWP.main.classList.add('start-animation');
-					
+
 					/* Puts the new page title in place */
 					if(UWP.header.type === 'overlay') {
 						UWP.pageTitle.innerHTML = pageTitle;
 					}
 					document.title = pageTitle + ' - ' + UWP.config.pageTitle;
-					
+
 					/* Highlights current page */
 					toArray(document.querySelectorAll('nav a')).forEach(function(link) {
 						if(link.getAttribute('data-target') == UWP.config.currentPage)
@@ -389,13 +389,13 @@ UWP.navigate = function(target, addHistory) {
 				}
 				else {
 					console.error('Something went wrong');
-					
+
 					displayError();
 				}
 			}
 			else {
 				console.error('Failed to retrieve the requested page.');
-				
+
 				displayError('Check connection');
 			}
 		}
