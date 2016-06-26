@@ -80,6 +80,12 @@ header {
 	background: rgb(230, 230, 230);
 	color: rgb(92, 92, 92);
 }
+[data-layoutType="tabs"].theme-light header {
+	color: rgba(0, 0, 0, 0.6); /* 92, 92, 92 */
+}
+[data-layoutType="tabs"].theme-dark header {
+	color: rgba(255, 255, 255, 1);
+}
 	/* Hide all unsupported navs */
 	[data-layoutType="tabs"] header nav {
 		display: none;
@@ -112,6 +118,12 @@ header {
 			[data-layoutType="tabs"] header nav:nth-of-type(1) ul li:not(.active):hover {
 				background-color: rgb(205, 205, 205);
 			}
+			[data-layoutType="tabs"].theme-light header nav:nth-of-type(1) ul li:not(.active):hover {
+				background-color: rgba(0, 0, 0, 0.1);
+			}
+			[data-layoutType="tabs"].theme-dark header nav:nth-of-type(1) ul li:not(.active):hover {
+				background-color: rgba(255, 255, 255, 0.1);
+			}
 				[data-layoutType="tabs"] header nav:nth-of-type(1) ul li a {
 					width: 100%;
 					height: 100%;
@@ -139,6 +151,13 @@ header {
 	
 	display: flex;
 }	  
+}
+[data-layoutType="overlay"].theme-light header {
+	color: rgba(0, 0, 0, 0.78); /* 50, 50, 50 */
+}
+[data-layoutType="overlay"].theme-dark header {
+	color: rgba(255, 255, 255, 1);
+}
 	[data-layoutType="overlay"] header > span {
 		height: 24px;
 		margin: 10px 0;
@@ -153,6 +172,12 @@ header {
 		line-height: 24px;
 		color: rgb(50, 50, 50);
 	}
+	[data-layoutType="overlay"].theme-light header > span {
+		border-left-color: rgba(0, 0, 0, 0.2);
+	}
+	[data-layoutType="overlay"].theme-dark header > span {
+		border-left-color: rgba(255, 255, 255, 0.4);
+	}
 	[data-layoutType="overlay"] header button {
 		width: 44px;
 		height: 44px;
@@ -165,6 +190,12 @@ header {
 	}
 	[data-layoutType="overlay"] header button:hover {
 		background-color: rgb(218, 218, 218);
+	}
+	[data-layoutType="overlay"].theme-light header button:hover {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
+	[data-layoutType="overlay"].theme-dark header button:hover {
+		background-color: rgba(255, 255, 255, 0.1);
 	}
 	[data-layoutType="overlay"] header nav:nth-of-type(1) {
 		width: 250px;
@@ -211,8 +242,20 @@ header {
 				color: white;
 				background-color: rgb(0, 120, 215);
 			}
+			[data-layoutType="overlay"].active-light header nav:nth-of-type(1) ul li.active {
+				color: black;
+			}
+			[data-layoutType="overlay"].active-dark header nav:nth-of-type(1) ul li.active {
+				color: white;
+			}
 			[data-layoutType="overlay"] header nav:nth-of-type(1) ul li:not(.active):hover {
 				background-color: rgb(205, 205, 205);
+			}
+			[data-layoutType="overlay"].theme-light header nav:nth-of-type(1) ul li:not(.active):hover {
+				background-color: rgba(0, 0, 0, 0.1);
+			}
+			[data-layoutType="overlay"].theme-dark header nav:nth-of-type(1) ul li:not(.active):hover {
+				background-color: rgba(255, 255, 255, 0.1);
 			}
 				[data-layoutType="overlay"] header nav:nth-of-type(1) ul li a {
 					width: 100%;
@@ -247,6 +290,12 @@ header {
 	
 	display: flex;
 }
+[data-layoutType="docked-minimized"].theme-light header {
+	color: rgba(0, 0, 0, 0.78); /* 50, 50, 50 */
+}
+[data-layoutType="docked-minimized"].theme-dark header {
+	color: rgba(255, 255, 255, 1);
+}
 	[data-layoutType="docked-minimized"] header button {
 		width: 44px;
 		height: 44px;
@@ -259,6 +308,12 @@ header {
 	}
 	[data-layoutType="docked-minimized"] header button:hover {
 		background-color: rgb(218, 218, 218);
+	}
+	[data-layoutType="docked-minimized"].theme-light header button:hover {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
+	[data-layoutType="docked-minimized"].theme-dark header button:hover {
+		background-color: rgba(255, 255, 255, 0.1);
 	}
 	[data-layoutType="docked-minimized"] header nav:nth-of-type(1) {
 		width: 250px;
@@ -307,8 +362,20 @@ header {
 				color: white;
 				background-color: rgb(0, 120, 215);
 			}
+			[data-layoutType="docked-minimized"].active-light header nav:nth-of-type(1) ul li.active {
+				color: black;
+			}
+			[data-layoutType="docked-minimized"].active-dark header nav:nth-of-type(1) ul li.active {
+				color: white;
+			}
 			[data-layoutType="docked-minimized"] header nav:nth-of-type(1) ul li:not(.active):hover {
 				background-color: rgb(205, 205, 205);
+			}
+			[data-layoutType="docked-minimized"].theme-light header nav:nth-of-type(1) ul li:not(.active):hover {
+				background-color: rgba(0, 0, 0, 0.1);
+			}
+			[data-layoutType="docked-minimized"].theme-dark header nav:nth-of-type(1) ul li:not(.active):hover {
+				background-color: rgba(255, 255, 255, 0.1);
 			}
 				[data-layoutType="docked-minimized"] header nav:nth-of-type(1) ul li a {
 					width: 100%;
@@ -342,6 +409,12 @@ header {
 	color: rgb(50, 50, 50);
 	
 	display: flex;
+}
+[data-layoutType="docked"].theme-light header {
+	color: rgba(0, 0, 0, 0.78); /* 50, 50, 50 */
+}
+[data-layoutType="docked"].theme-dark header {
+	color: rgba(255, 255, 255, 1);
 }
 	[data-layoutType="docked"] header nav:nth-of-type(1) {
 		width: 250px;
@@ -377,8 +450,20 @@ header {
 				color: white;
 				background-color: rgb(0, 120, 215);
 			}
+			[data-layoutType="docked"].active-light header nav:nth-of-type(1) ul li.active {
+				color: black;
+			}
+			[data-layoutType="docked"].active-dark header nav:nth-of-type(1) ul li.active {
+				color: white;
+			}
 			[data-layoutType="docked"] header nav:nth-of-type(1) ul li:not(.active):hover {
 				background-color: rgb(205, 205, 205);
+			}
+			[data-layoutType="docked"].theme-light header nav:nth-of-type(1) ul li:not(.active):hover {
+				background-color: rgba(0, 0, 0, 0.1);
+			}
+			[data-layoutType="docked"].theme-dark header nav:nth-of-type(1) ul li:not(.active):hover {
+				background-color: rgba(255, 255, 255, 0.1);
 			}
 				[data-layoutType="docked"] header nav:nth-of-type(1) ul li a {
 					width: 100%;
@@ -427,6 +512,12 @@ nav[data-type="commands"] {
 		}
 		nav[data-type="commands"] ul li:hover {
 			background-color: rgb(205, 205, 205);
+		}
+		nav[data-type="commands"].theme-light ul li:hover {
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+		nav[data-type="commands"].theme-dark ul li:hover {
+			background-color: rgba(255, 255, 255, 0.1);
 		}
 			nav[data-type="commands"] ul li span {
 				display: block;
