@@ -699,5 +699,9 @@ main.start-animation {
 
 main.error {
 	text-align: center;
-	padding-top: calc(50% - 6.5em);
 }
+	main.error .error-container {
+		position: relative;
+		margin-top: 50vh;
+		transform: translateY(-50%);
+	}

@@ -344,7 +344,7 @@ UWP.navigate = function(target, addHistory) {
 	/* Displays error message */
 	function displayError(title) {
 		UWP.main.classList.add('error');
-		UWP.main.innerHTML = '<h3>' + title + '</h3><p>Ready for an adventure?</p><p><a href="#">Try again</a>'
+		UWP.main.innerHTML = '<div class="error-container"><h3>' + title + '</h3><p>Ready for an adventure?</p><p><a href="#">Try again</a></div>';
 		UWP.main.querySelector('a').addEventListener('click', function(event) {
 			event.preventDefault();
 
