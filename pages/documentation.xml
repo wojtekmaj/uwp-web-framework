@@ -25,6 +25,8 @@
                 <ul>
                     <li><strong>pageTitle</strong> <em>(string)</em> - specifies page title.</li>
                     <li><strong>layoutType</strong> <em>([tabs, overlay, docked-minimized, docked], default: overlay)</em> - specifies header type. See "Available layout types" for more information.</li>
+                    <li><strong>mainColor</strong> <em>(string)</em> - specifies main theme color. Supported formats: rgb.</li>
+                    <li><strong>activeColor</strong> <em>(string)</em> - specifies active theme color. Supported formats: rgb.</li>
                 </ul>
                 <h5>Available layout types</h5>
                 <ul>
