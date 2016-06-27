@@ -152,6 +152,8 @@ UWP.getNavigation = function(target) {
 		navLink.addEventListener('click', function(event) {
 			event.preventDefault();
 
+			UWP.menuList.classList.remove('active');
+
 			UWP.navigate(navTarget);
 		});
 		navLink.setAttribute('data-target', navTarget)
