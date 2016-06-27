@@ -63,6 +63,7 @@
                     <li><strong>title</strong> <em>(string)</em> - required - page title.</li>
                     <li><strong>nav</strong> <em>(string, default: default)</em> - navigation used by the page.</li>
                     <li><strong>body</strong> <em>(CDATA)</em> - required - page body.</li>
+                    <li><strong>includeScript</strong> <em>(script)</em> - a filename of the script to include on the page. The script shall be placed in /static/js folder.</li>
                 </ul>
             </section>
         ]]>
