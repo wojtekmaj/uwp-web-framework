@@ -63,11 +63,8 @@ UWP.init = function(params) {
 	}
 
 	/* Prepares space for document's title, puts it in place */
-	if(UWP.header.type === 'overlay') {
-		UWP.pageTitle = document.createElement('span');
-
-		UWP.header.prependChild(UWP.pageTitle);
-	}
+	UWP.pageTitle = document.createElement('span');
+	UWP.header.prependChild(UWP.pageTitle);
 }
 
 
@@ -314,26 +311,21 @@ UWP.createStyles = function() {
 UWP.addMenuButton = function() {
 	console.log('UWP.addMenuButton()');
 
-	if(
-		UWP.header.type === 'overlay' ||
-		UWP.header.type === 'docked-minimized'
-	) {
-		UWP.menuButton = document.createElement('button');
-		UWP.menuButton.innerHTML = '&#xE700;';
-		UWP.menuButton.setAttribute('aria-label', 'Menu');
+	UWP.menuButton = document.createElement('button');
+	UWP.menuButton.innerHTML = '&#xE700;';
+	UWP.menuButton.setAttribute('aria-label', 'Menu');
 
-		UWP.menuList = UWP.header.querySelector('header nav');
+	UWP.menuList = UWP.header.querySelector('header nav');
 
-		UWP.menuButton.addEventListener('click', function() {
-			UWP.menuList.classList.toggle('active');
-		});
+	UWP.menuButton.addEventListener('click', function() {
+		UWP.menuList.classList.toggle('active');
+	});
 
-		UWP.main.addEventListener('click', function() {
-			UWP.menuList.classList.remove('active');
-		});
+	UWP.main.addEventListener('click', function() {
+		UWP.menuList.classList.remove('active');
+	});
 
-		UWP.header.prependChild(UWP.menuButton);
-	}
+	UWP.header.prependChild(UWP.menuButton);
 };
 
 
@@ -398,9 +390,7 @@ UWP.navigate = function(target, addHistory) {
 
 					/* Puts the new page title in place */
 					pageTitle = pageTitle.textContent;
-					if(UWP.header.type === 'overlay') {
-						UWP.pageTitle.innerHTML = pageTitle;
-					}
+					UWP.pageTitle.innerHTML = pageTitle;
 					document.title = pageTitle + ' - ' + UWP.config.pageTitle;
 
 					/* Runs defined script */

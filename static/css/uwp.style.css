@@ -91,6 +91,14 @@ header {
 [data-layoutType="tabs"].theme-dark header {
 	color: rgba(255, 255, 255, 1);
 }
+	/* Hide unnecessary title */
+	[data-layoutType="tabs"] header > span {
+		display: none;
+	}
+	/* Hide unnecessary menu button */
+	[data-layoutType="tabs"] header button {
+		display: none;
+	}
 	/* Hide all unsupported navs */
 	[data-layoutType="tabs"] header nav {
 		display: none;
@@ -310,6 +318,10 @@ header {
 [data-layoutType="docked-minimized"].theme-dark header {
 	color: rgba(255, 255, 255, 1);
 }
+	/* Hide unnecessary title */
+	[data-layoutType="docked-minimized"] header > span {
+		display: none;
+	}
 	[data-layoutType="docked-minimized"] header button {
 		width: 44px;
 		height: 44px;
@@ -440,6 +452,14 @@ header {
 [data-layoutType="docked"].theme-dark header {
 	color: rgba(255, 255, 255, 1);
 }
+	/* Hide unnecessary title */
+	[data-layoutType="docked"] header > span {
+		display: none;
+	}
+	/* Hide unnecessary menu button */
+	[data-layoutType="docked"] header button {
+		display: none;
+	}
 	[data-layoutType="docked"] header nav:nth-of-type(1) {
 		width: 250px;
 		background: rgb(230, 230, 230);
