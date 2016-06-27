@@ -2,12 +2,28 @@
     <title>UWP web framework</title>
     <body>
         <![CDATA[
+			<style>
+				main section button[disabled]:after {
+					content: ' (active)';
+				}
+			</style>
+
             <h2>UWP web framework</h2>
+
             <section>
                 <h3>Hello!</h3>
                 <p>Welcome to Universal Windows Platform web framework.</p>
                 <p>Create web-based Universal Windows Platform applications in a blink of an eye! Use basic HTML syntax, and let UWP web framework do all the work for you!</p>
-                <p>Check out the <a href="#" data-target="documentation" title="Documentation">documentation</a> to get started.</p>
+
+				<h3>4 beautiful, modern layouts</h3>
+				<p>Check them out! Click one of the buttons below change the layout.</p>
+				<button onClick="event.preventDefault(); Array.prototype.slice.call(document.querySelectorAll('main section button')).forEach(el => el.disabled = false); event.target.disabled = true; document.body.setAttribute('data-layouttype', 'tabs');">Tabs</button></li>
+				<button href="#" onClick="event.preventDefault(); Array.prototype.slice.call(document.querySelectorAll('main section button')).forEach(el => el.disabled = false); event.target.disabled = true; document.body.setAttribute('data-layouttype', 'overlay');">Overlay</button></li>
+				<button href="#" onClick="event.preventDefault(); Array.prototype.slice.call(document.querySelectorAll('main section button')).forEach(el => el.disabled = false); event.target.disabled = true; document.body.setAttribute('data-layouttype', 'docked-minimized');" disabled>Docked (minimized variant)</button></li>
+				<button href="#" onClick="event.preventDefault(); Array.prototype.slice.call(document.querySelectorAll('main section button')).forEach(el => el.disabled = false); event.target.disabled = true; document.body.setAttribute('data-layouttype', 'docked');">Docked (always visible variant)</button></li>
+
+                <h3>Get started</h3>
+				<p>Check out the <a href="#" data-target="documentation" title="Documentation">documentation</a> to get help on your way to your first web-based Universal Windows Platform app.</p>
             </section>
         ]]>
     </body>
