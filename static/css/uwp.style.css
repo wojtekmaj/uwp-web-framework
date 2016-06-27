@@ -111,17 +111,16 @@ header {
 
 		display: flex;
 		justify-content: center;
+		overflow-y: scroll;
 	}
 		[data-layoutType="tabs"] header nav:nth-of-type(1) ul {
-			height: 100%;
-
 			flex-shrink: 1;
 
 			display: flex;
 		}
 			[data-layoutType="tabs"] header nav:nth-of-type(1) ul li {
-				width: 84px;
-				height: 100%;
+				min-width: 84px;
+				max-width: 168px;
 				border-bottom: 2px solid transparent;
 			}
 			[data-layoutType="tabs"] header nav:nth-of-type(1) ul li.active {
