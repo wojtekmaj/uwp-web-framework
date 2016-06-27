@@ -387,6 +387,7 @@ UWP.navigate = function(target, addHistory) {
 					var pageBody = toArray(page.querySelector('body').childNodes).filter(function(childNode) {
 						return childNode.nodeType === 4;
 					})[0].data;
+					var pageIncludeScript = page.querySelector('includeScript');
 
 					/* Puts the new content in place */
 					UWP.main.innerHTML = pageBody;
@@ -401,6 +402,16 @@ UWP.navigate = function(target, addHistory) {
 						UWP.pageTitle.innerHTML = pageTitle;
 					}
 					document.title = pageTitle + ' - ' + UWP.config.pageTitle;
+
+					/* Runs defined script */
+					if(pageIncludeScript) {
+						pageIncludeScript = pageIncludeScript.textContent;
+						// @TODO: Check if the script has already been loaded
+						// @TODO: Create init() and run() functions inside the script, call them from here
+						var script = document.createElement('script');
+						script.src = 'static/js/' + pageIncludeScript;
+						UWP.body.appendChild(script);
+					}
 
 					UWP.updateNavigation();
 				}
