@@ -718,6 +718,7 @@ main.start-animation {
 				}
 				main section[data-type="list"] ul li p {
 					font-size: 13px;
+					margin: 0;
 				}
 
 main.error {
