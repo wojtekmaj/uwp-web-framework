@@ -376,7 +376,14 @@ UWP.navigate = function(target, addHistory) {
 			if(UWP_navigate_request.status == 200) {
 				if(UWP_navigate_request.responseXML) {
 					var page = UWP_navigate_request.responseXML.querySelector('page');
-					var pageTitle = page.querySelector('title').textContent;
+
+					if(!page) {
+						console.error('Something went wrong');
+
+						displayError();
+					}
+
+					var pageTitle = page.querySelector('title');
 					var pageBody = toArray(page.querySelector('body').childNodes).filter(function(childNode) {
 						return childNode.nodeType === 4;
 					})[0].data;
@@ -389,6 +396,7 @@ UWP.navigate = function(target, addHistory) {
 					UWP.main.classList.add('start-animation');
 
 					/* Puts the new page title in place */
+					pageTitle = pageTitle.textContent;
 					if(UWP.header.type === 'overlay') {
 						UWP.pageTitle.innerHTML = pageTitle;
 					}
