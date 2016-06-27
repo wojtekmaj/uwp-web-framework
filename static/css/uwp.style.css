@@ -111,7 +111,7 @@ header {
 
 		display: flex;
 		justify-content: center;
-		overflow-y: scroll;
+		overflow-x: auto;
 	}
 		[data-layoutType="tabs"] header nav:nth-of-type(1) ul {
 			flex-shrink: 1;
