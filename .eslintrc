@@ -1,0 +1,14 @@
+{
+	"extends": "airbnb",
+	"rules": {
+		"brace-style": ["error", "stroustrup"],
+		"camelcase": "off",
+		"func-names": "off",
+		"indent": ["error", "tab"],
+		"no-console": "off",
+		"no-param-reassign": "off",
+		"no-var": "off",
+		"prefer-arrow-callback": "off",
+		"vars-on-top": "off"
+	}
+}
