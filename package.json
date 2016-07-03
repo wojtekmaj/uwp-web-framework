@@ -1,0 +1,25 @@
+{
+  "name": "uwp-web-framework",
+  "version": "2.0.0",
+  "license": "CC-BY-4.0",
+  "description": "Create web-based Universal Windows Platform applications in a blink of an eye! Use basic HTML syntax, and let UWP web framework do all the work for you!",
+  "author": {
+    "name": "Wojciech Maj",
+    "email": "kontakt@wojtekmaj.pl",
+    "url": "http://wojtekmaj.pl/"
+  },
+  "url": "https://github.com/wojtekmaj/uwp-web-framework",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wojtekmaj/uwp-web-framework.git"
+  },
+  "bugs": "https://github.com/wojtekmaj/uwp-web-framework/issues",
+  "homepage": "http://projekty.wojtekmaj.pl/UWP_framework/",
+  "devDependencies": {
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb": "^9.0.0",
+    "eslint-plugin-import": "^1.10.1",
+    "eslint-plugin-jsx-a11y": "^1.5.0",
+    "eslint-plugin-react": "5.2.2"
+  }
+}
