@@ -39,12 +39,14 @@ UWP.init = function () {
 	/* Define main elements */
 	UWP.head = document.head;
 	UWP.body = document.body;
-	UWP.header = document.querySelector('header');
-	UWP.main = document.querySelector('main');
 
-	/* A little cleanup */
-	UWP.header.innerHTML = '';
-	UWP.main.innerHTML = '';
+	UWP.pageTitle = document.createElement('h1');
+	document.body.appendChild(UWP.pageTitle);
+
+	UWP.header = document.createElement('header');
+	document.body.appendChild(UWP.header);
+	UWP.main = document.createElement('main');
+	document.body.appendChild(UWP.main);
 
 	/* Gets user-set config */
 	UWP.getConfig();
