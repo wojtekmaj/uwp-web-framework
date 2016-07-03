@@ -327,7 +327,9 @@ UWP.createStyles = function () {
 		`;
 	}
 
-	UWP.body.appendChild(UWP.customStyle);
+	if (UWP.customStyle.innerHTML.length) {
+		UWP.body.appendChild(UWP.customStyle);
+	}
 };
 
 
