@@ -51,6 +51,9 @@ UWP.init = function () {
 	/* Gets user-set config */
 	UWP.getConfig();
 
+	/* Set page title */
+	UWP.pageTitle = UWP.config.pageTitle;
+
 	/* Define additional variables */
 	UWP.header.type = UWP.config.layoutType;
 	UWP.body.setAttribute('data-layoutType', UWP.header.type);
