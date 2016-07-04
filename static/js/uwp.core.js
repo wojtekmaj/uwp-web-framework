@@ -30,7 +30,7 @@ var UWP = {
 	},
 
 	/* Main init function */
-	init() {
+	init(params) {
 		console.log('UWP.init()');
 
 		/* Define main elements */
@@ -46,7 +46,7 @@ var UWP = {
 		document.body.appendChild(UWP.main);
 
 		/* Gets user-set config */
-		UWP.getConfig();
+		UWP.getConfig(params);
 
 		/* Set page title */
 		UWP.pageTitle = UWP.config.pageTitle;
@@ -82,49 +82,10 @@ var UWP = {
 	},
 
 	/* Gets document's navigation, puts it in place */
-	getConfig() {
+	getConfig(params) {
 		console.log('UWP.getConfig()');
 
-		var URL = 'config/config.xml';
-
-		var UWP_config_request = new XMLHttpRequest();
-		UWP_config_request.onreadystatechange = function () {
-			if (UWP_config_request.readyState === 4) {
-				if (UWP_config_request.status === 200) {
-					if (UWP_config_request.responseXML) {
-						var config = UWP_config_request.responseXML.querySelector('config');
-						var pageTitleSource = config.querySelector('pageTitle');
-						var layoutTypeSource = config.querySelector('layoutType');
-						var mainColor = config.querySelector('mainColor');
-						var activeColor = config.querySelector('activeColor');
-
-						if (pageTitleSource) {
-							UWP.config.pageTitle = document.title = pageTitleSource.textContent;
-						}
-
-						if (layoutTypeSource) {
-							UWP.config.layoutType = layoutTypeSource.textContent;
-						}
-
-						if (mainColor) {
-							UWP.config.mainColor = mainColor.textContent;
-						}
-
-						if (activeColor) {
-							UWP.config.activeColor = activeColor.textContent;
-						}
-					}
-					else {
-						console.error('Invalid response.');
-					}
-				}
-				else {
-					console.error('Failed to retrieve config file.');
-				}
-			}
-		};
-		UWP_config_request.open('GET', URL, false);
-		UWP_config_request.send(null);
+		UWP.config = Object.assign(UWP.config, params);
 	},
 
 	/* Gets document's navigation, puts it in place */
