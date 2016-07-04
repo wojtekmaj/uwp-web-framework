@@ -331,7 +331,7 @@ var UWP = {
 		UWP.config.currentPage = target;
 
 		/* Pushes history state */
-		if (addHistory) {
+		if (addHistory !== false) {
 			history.pushState('', '', `${window.location.href.split('#')[0]}#page=${target}`);
 		}
 
