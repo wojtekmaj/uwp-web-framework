@@ -19,9 +19,9 @@
                     <li><strong>Internet Explorer</strong> (version 11 or later)</li>
                 </ul>
                 <h4>Configuration</h4>
-                <p>Configuration file is placed in config/config.xml. If you want to change the way the page looks or behaves by default, you need to edit that file.</p>
-                <p>Neither the file nor any of the variables in it listed below are required for the UWP web framework to work properly.</p>
-                <h5>Available config attributes:</h5>
+                <p>Configuration is an object you can optionally pass as an argument to UWP.init() call. If you want to change the way the page looks or behaves by default, you need to edit that object.</p>
+                <p>Neither the object nor any of its properties in it listed below are required for the UWP web framework to work properly.</p>
+                <h5>Available config properties:</h5>
                 <ul>
                     <li><strong>pageTitle</strong> <em>(string)</em> - specifies page title.</li>
                     <li><strong>layoutType</strong> <em>([tabs, overlay, docked-minimized, docked], default: overlay)</em> - specifies header type. See "Available layout types" for more information.</li>
