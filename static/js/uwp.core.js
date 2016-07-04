@@ -23,6 +23,8 @@ var calculateBrightness = function (color) {
 
 /* Define UWP namespace */
 var UWP = {
+	version: '2.0.0',
+
 	/* Default config */
 	config: {
 		pageTitle: 'UWP web framework',
