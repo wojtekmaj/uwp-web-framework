@@ -14,6 +14,23 @@ var toArray = function (obj) {
 	return Array.prototype.slice.call(obj);
 };
 
+var parseColor = function (color) {
+	var RGB_match = /^rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/;
+	var hex_match = /^#(([0-9a-f]{1,2})([0-9a-f]{1,2})([0-9a-f]{1,2}))$/;
+
+	if (RGB_match.test(color)) {
+		return color.match(RGB_match).slice(1);
+	}
+	else if (hex_match.test(color)) {
+		return color.match(hex_match).slice(2).map(function (piece) {
+			return parseInt(piece, 16);
+		});
+	}
+
+	console.error('Unrecognized color format.');
+	return null;
+};
+
 var calculateBrightness = function (color) {
 	return color.reduce(function (p, c) {
 		return p + parseInt(c, 10);
@@ -200,12 +217,9 @@ var UWP = {
 		UWP.customStyle = document.createElement('style');
 
 		if (UWP.config.mainColor) {
-			var mainColor_RGB =
-				UWP.config.mainColor.match(/rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/);
+			var mainColor_RGB = parseColor(UWP.config.mainColor);
 
 			if (mainColor_RGB) {
-				mainColor_RGB = mainColor_RGB.slice(1);
-
 				var mainColor_brightness = calculateBrightness(mainColor_RGB);
 
 				if (mainColor_brightness >= 128) {
@@ -250,12 +264,9 @@ var UWP = {
 		}
 
 		if (UWP.config.activeColor) {
-			var activeColor_RGB =
-				UWP.config.activeColor.match(/rgb\(\s*(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})\s*\)$/);
+			var activeColor_RGB = parseColor(UWP.config.activeColor);
 
 			if (activeColor_RGB) {
-				activeColor_RGB = activeColor_RGB.slice(1);
-
 				var activeColor_brightness = calculateBrightness(activeColor_RGB);
 
 				if (activeColor_brightness >= 128) {
