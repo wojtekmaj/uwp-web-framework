@@ -371,7 +371,7 @@ var UWP = {
 						if (!page) {
 							console.error('Something went wrong');
 
-							displayError();
+							displayError('Something went wrong');
 						}
 
 						var pageTitle = page.querySelector('title').textContent;
@@ -409,7 +409,7 @@ var UWP = {
 					else {
 						console.error('Something went wrong');
 
-						displayError();
+						displayError('Something went wrong');
 					}
 				}
 				else {
